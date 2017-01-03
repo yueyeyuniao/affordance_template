@@ -1,0 +1,10 @@
+string publisher
+string joint
+uint32 registerValue
+bool coeffsLoaded
+bool bridgeEnabled
+bool motorEnabled
+bool brakeReleased
+bool motorPowerDetected
+bool embeddedMotCom
+bool jointFaulted

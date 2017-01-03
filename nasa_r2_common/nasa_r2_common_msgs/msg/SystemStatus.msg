@@ -1,0 +1,11 @@
+Header              header
+string              name
+SystemCore[]        coreStats
+float64[]           coreTemps
+float64             oneMinuteLoad
+float64             fiveMinuteLoad
+float64             fifteenMinuteLoad
+duration            uptime
+uint32              totalMemory
+uint32              usedMemory
+uint32              freeMemory

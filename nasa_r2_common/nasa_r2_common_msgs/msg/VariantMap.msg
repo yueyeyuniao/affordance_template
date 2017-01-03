@@ -1,0 +1,10 @@
+string      name
+string      message
+ValueType[] value
+string[]    stringMap
+uint16[]    uint16Map
+int16[]     int16Map
+uint32[]    uint32Map
+int32[]     int32Map
+float32[]   float32Map
+bool[]      boolMap
