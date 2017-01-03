@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot>
 
-  <xacro:macro name="gazebo_legs_link" params="name material gravityOff static collide">
+  <macro name="gazebo_legs_link" params="name material gravityOff static collide">
      <gazebo reference="${name}">
         <selfCollide>${collide}</selfCollide>
         <static>${static}</static>
         <turnGravityOff>${gravityOff}</turnGravityOff>
         <material>${material}</material>
      </gazebo>
-  </xacro:macro>
+  </macro>
 
-  <xacro:macro name="gazebo_legs_joint" params="name">
+  <macro name="gazebo_legs_joint" params="name">
      <gazebo reference="${name}">
         <stopKd value="1.0" />
         <stopKp value="1000000.0" />
      </gazebo>
-  </xacro:macro>
+  </macro>
 
   <gazebo_legs_link name="${robot_name}pelvis" gravityOff="false" material="" static="false" collide="false"/>
 

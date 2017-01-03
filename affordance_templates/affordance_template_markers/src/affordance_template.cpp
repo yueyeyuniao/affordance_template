@@ -676,7 +676,8 @@ bool AffordanceTemplate::createDisplayObjectMarker(affordance_template_object::D
   } else if(obj.shape.type == "cylinder") {
     marker.type = visualization_msgs::Marker::CYLINDER;
     marker.scale.x = obj.shape.radius*object_scale_factor_[obj.name];
-    marker.scale.y = obj.shape.length*object_scale_factor_[obj.name];      
+    marker.scale.y = obj.shape.radius*object_scale_factor_[obj.name]; 
+    marker.scale.z = obj.shape.length*object_scale_factor_[obj.name];    
   }
 
   if(obj.shape.type != "mesh") {

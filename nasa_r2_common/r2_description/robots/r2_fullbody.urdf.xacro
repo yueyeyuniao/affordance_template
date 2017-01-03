@@ -2,13 +2,13 @@
 
   <robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
-       xmlns:interface="http://www.ros.org/wiki/xacro"
-       xmlns:xacro="http://www.ros.org/wiki/xacro"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        name="r2_fullbody" >
 
   <link name="world"/>
 
-  <xacro:property name="robot_name" value= "r2/" />
+  <property name="robot_name" value= "r2/" />
 
 <!--  transforms in first joint don't seem to work properly-->
   <joint name="${robot_name}fixed/world/robot_world" type="fixed">

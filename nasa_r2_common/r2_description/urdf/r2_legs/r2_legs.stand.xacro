@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot>
 
-  <xacro:macro name="vert_link" params="num len">
+  <macro name="vert_link" params="num len">
     <link name="${robot_name}leg_stand_vert${num}">
       <inertial>
         <mass value="1.0" />
@@ -21,9 +21,9 @@
         </geometry>
       </collision>
     </link>
-  </xacro:macro>
+  </macro>
 
-  <xacro:macro name="horz_link" params="num">
+  <macro name="horz_link" params="num">
     <link name="${robot_name}leg_stand_horz${num}">
       <inertial>
         <mass value="1.0" />
@@ -43,9 +43,9 @@
         </geometry>
       </collision>
     </link>
-  </xacro:macro>
+  </macro>
 
-  <xacro:macro name="cross_link" params="num len">
+  <macro name="cross_link" params="num len">
     <link name="${robot_name}leg_stand_cross${num}">
       <inertial>
         <mass value="0.02" />
@@ -65,7 +65,7 @@
         </geometry>
       </collision>
     </link>
-  </xacro:macro>
+  </macro>
 
   <link name="world"/>
 

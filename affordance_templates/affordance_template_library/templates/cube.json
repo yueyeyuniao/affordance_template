@@ -4,79 +4,133 @@
   "display_objects": [
     {
       "name": "cube",
-       "shape": {
+      "shape": {
         "type": "box",
         "material": {
           "color": "red",
-          "rgba": [0.0, 1.0, 0.0, 1.0]
+          "rgba": [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ]
         },
-        "size": [0.04, 0.08, 0.08]
+        "size": [
+          0.04,
+          0.08,
+          0.08
+        ]
       },
-      "origin" : {
-        "xyz": [0.0, 0.0, 0.0],
-        "rpy": [0.0, 0.0, 1.57]
+      "origin": {
+        "xyz": [
+          0.263512521982193,
+          0.21625950932502747,
+          0.3662518560886383
+        ],
+        "rpy": [
+          1.5709076767419997,
+          0.03607377061592704,
+          1.5470962509477595
+        ]
       },
       "controls": {
-        "xyz": [true, true, true],
-        "rpy": [true, true, true],
+        "xyz": [
+          true,
+          true,
+          true
+        ],
+        "rpy": [
+          true,
+          true,
+          true
+        ],
         "scale": 0.1
       }
     }
   ],
-
   "end_effector_trajectory": [
     {
       "name": "Hand Top Grasp",
-      "end_effector_group" : [
-        { 
+      "end_effector_group": [
+        {
           "id": 0,
-          "end_effector_waypoint" : [
+          "end_effector_waypoint": [
             {
               "ee_pose": 0,
               "display_object": "cube",
               "origin": {
-                "xyz": [0.0, 0.0, -0.16],
-                "rpy": [0.0, -1.57, -1.57]
+                "xyz": [
+                  0.043464165180921558,
+                  -0.14339002966880799,
+                  -0.2122134119272232
+                ],
+                "rpy": [
+                  0.06295273289988709,
+                  -1.5699998917938516,
+                  -1.5700450878625463
+                ]
               },
               "controls": {
-                  "xyz": [true, true, true],
-                  "rpy": [true, true, true],
-                  "scale": 0.1
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.1
               },
+              "tool_offset": {
+                "xyz": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "rpy": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "tolerances": {
+                "x": [
+                  0.01,
+                  -0.01
+                ],
+                "y": [
+                  0.01,
+                  -0.01
+                ],
+                "z": [
+                  0.01,
+                  -0.01
+                ],
+                "R": [
+                  0.0349,
+                  -0.0349
+                ],
+                "P": [
+                  0.0349,
+                  -0.0349
+                ],
+                "Y": [
+                  0.0349,
+                  -0.0349
+                ]
+              },
+              "conditioning_metric": "MIN_DISTANCE",
               "planner_type": "JOINT"
-            },
-	          {
-              "ee_pose": 3,
-              "display_object": "cube",
-              "origin": {
-                "xyz": [0.0, 0.0, -0.02],
-                "rpy": [0.0, -1.57, -1.57]
-              },
-              "controls": {
-                  "xyz": [true, true, true],
-                  "rpy": [true, true, true],
-                  "scale": 0.1
-              }
-            },
-	          {
-              "ee_pose": 3,
-              "display_object": "cube",
-              "origin": {
-                "xyz": [0.0, 0.0, -0.16],
-                "rpy": [0.0, -1.57, -1.57]
-              },
-              "controls": {
-                  "xyz": [true, true, true],
-                  "rpy": [true, true, true],
-                  "scale": 0.1
-              }
             }
-
-	        ]
+          ]
         }
       ]
+    },
+    {
+      "name": "test",
+      "end_effector_group": []
     }
   ]
 }
-
-

@@ -1,46 +1,46 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot>
 
-  <xacro:property name="left_arm_hand_thumb_j0_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_thumb_j0_friction" value= "0.0" />
-  <xacro:property name="left_arm_hand_thumb_j1_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_thumb_j1_friction" value= "0.0" />
-  <xacro:property name="left_arm_hand_thumb_j2_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_thumb_j2_friction" value= "0.0" />
-  <xacro:property name="left_arm_hand_thumb_j3_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_thumb_j3_friction" value= "0.0" />
+  <property name="left_arm_hand_thumb_j0_damping" value= "0.1" />
+  <property name="left_arm_hand_thumb_j0_friction" value= "0.0" />
+  <property name="left_arm_hand_thumb_j1_damping" value= "0.1" />
+  <property name="left_arm_hand_thumb_j1_friction" value= "0.0" />
+  <property name="left_arm_hand_thumb_j2_damping" value= "0.1" />
+  <property name="left_arm_hand_thumb_j2_friction" value= "0.0" />
+  <property name="left_arm_hand_thumb_j3_damping" value= "0.1" />
+  <property name="left_arm_hand_thumb_j3_friction" value= "0.0" />
 
-  <xacro:property name="left_arm_hand_index_j0_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_index_j0_friction" value= "0.0" />
-  <xacro:property name="left_arm_hand_index_j1_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_index_j1_friction" value= "0.0" />
-  <xacro:property name="left_arm_hand_index_j2_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_index_j2_friction" value= "0.0" />
-  <xacro:property name="left_arm_hand_index_j3_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_index_j3_friction" value= "0.0" />
+  <property name="left_arm_hand_index_j0_damping" value= "0.1" />
+  <property name="left_arm_hand_index_j0_friction" value= "0.0" />
+  <property name="left_arm_hand_index_j1_damping" value= "0.1" />
+  <property name="left_arm_hand_index_j1_friction" value= "0.0" />
+  <property name="left_arm_hand_index_j2_damping" value= "0.1" />
+  <property name="left_arm_hand_index_j2_friction" value= "0.0" />
+  <property name="left_arm_hand_index_j3_damping" value= "0.1" />
+  <property name="left_arm_hand_index_j3_friction" value= "0.0" />
 
-  <xacro:property name="left_arm_hand_middle_j0_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_middle_j0_friction" value= "0.0" />
-  <xacro:property name="left_arm_hand_middle_j1_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_middle_j1_friction" value= "0.0" />
-  <xacro:property name="left_arm_hand_middle_j2_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_middle_j2_friction" value= "0.0" />
-  <xacro:property name="left_arm_hand_middle_j3_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_middle_j3_friction" value= "0.0" />
+  <property name="left_arm_hand_middle_j0_damping" value= "0.1" />
+  <property name="left_arm_hand_middle_j0_friction" value= "0.0" />
+  <property name="left_arm_hand_middle_j1_damping" value= "0.1" />
+  <property name="left_arm_hand_middle_j1_friction" value= "0.0" />
+  <property name="left_arm_hand_middle_j2_damping" value= "0.1" />
+  <property name="left_arm_hand_middle_j2_friction" value= "0.0" />
+  <property name="left_arm_hand_middle_j3_damping" value= "0.1" />
+  <property name="left_arm_hand_middle_j3_friction" value= "0.0" />
 
-  <xacro:property name="left_arm_hand_ring_j0_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_ring_j0_friction" value= "0.0" />
-  <xacro:property name="left_arm_hand_ring_j1_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_ring_j1_friction" value= "0.0" />
-  <xacro:property name="left_arm_hand_ring_j2_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_ring_j2_friction" value= "0.0" />
+  <property name="left_arm_hand_ring_j0_damping" value= "0.1" />
+  <property name="left_arm_hand_ring_j0_friction" value= "0.0" />
+  <property name="left_arm_hand_ring_j1_damping" value= "0.1" />
+  <property name="left_arm_hand_ring_j1_friction" value= "0.0" />
+  <property name="left_arm_hand_ring_j2_damping" value= "0.1" />
+  <property name="left_arm_hand_ring_j2_friction" value= "0.0" />
 
-  <xacro:property name="left_arm_hand_little_j0_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_little_j0_friction" value= "0.0" />
-  <xacro:property name="left_arm_hand_little_j1_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_little_j1_friction" value= "0.0" />
-  <xacro:property name="left_arm_hand_little_j2_damping" value= "0.1" />
-  <xacro:property name="left_arm_hand_little_j2_friction" value= "0.0" />
+  <property name="left_arm_hand_little_j0_damping" value= "0.1" />
+  <property name="left_arm_hand_little_j0_friction" value= "0.0" />
+  <property name="left_arm_hand_little_j1_damping" value= "0.1" />
+  <property name="left_arm_hand_little_j1_friction" value= "0.0" />
+  <property name="left_arm_hand_little_j2_damping" value= "0.1" />
+  <property name="left_arm_hand_little_j2_friction" value= "0.0" />
 
   <joint name="${robot_name}left_arm/hand/thumb/roll" type="revolute">
     <parent link="${robot_name}left_wrist_yaw"/>

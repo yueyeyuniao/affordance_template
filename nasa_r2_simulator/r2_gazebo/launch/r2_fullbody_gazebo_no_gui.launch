@@ -25,7 +25,7 @@
 
   <!-- load robot -->
   <group if="$(arg robot)">
-    <param name="robot_description" command="$(find xacro)/xacro '$(find r2_gazebo)/robots/r2_fullbody.sim.urdf.xacro'" />
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find r2_gazebo)/robots/r2_fullbody.sim.urdf.xacro'" />
     <node name="spawn_r2" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model r2 -paused=true" respawn="false" output="screen" />
   </group>
 

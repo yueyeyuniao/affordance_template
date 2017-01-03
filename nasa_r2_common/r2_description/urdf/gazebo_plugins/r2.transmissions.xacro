@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot>
 
   <!-- transmission xacro -->
-  <xacro:macro name="r2_trans" params="part joint reduction tc">
+  <macro name="r2_trans" params="part joint reduction tc">
      <transmission name="${part}_j${joint}_trans" type="pr2_mechanism_model/SimpleTransmission">
        <actuator name="${part}_j${joint}_motor"/>
        <joint name="${part}/joint${joint}"/>
        <mechanicalReduction>${reduction}</mechanicalReduction>
        <motorTorqueConstant>${tc}</motorTorqueConstant>
      </transmission>
-  </xacro:macro>
+  </macro>
 
   <!-- r2_arm_transmission xacro -->
-  <xacro:macro name="r2_arm_trans" params="side">
+  <macro name="r2_arm_trans" params="side">
 
      <r2_trans part="${side}" joint="0" reduction="160" tc="0.305"/>
      <r2_trans part="${side}" joint="1" reduction="160" tc="0.305"/>
@@ -45,7 +45,7 @@
      <r2_trans part="${side}/hand/little" joint="1" reduction="1" tc="1"/>
      <r2_trans part="${side}/hand/little" joint="2" reduction="1" tc="1"/>
 
-  </xacro:macro>
+  </macro>
 
   <r2_trans part="${robot_name}waist" joint="0" reduction="0.00625" tc="0.1"/>
 

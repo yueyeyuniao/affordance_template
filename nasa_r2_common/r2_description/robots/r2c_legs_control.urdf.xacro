@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
 
 <robot name="r2c_legs" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
-                       xmlns:interface="http://www.ros.org/wiki/xacro"
+                       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
                        xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
-                       xmlns:xacro="http://www.ros.org/wiki/xacro">
+                       xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface">
 
-  <xacro:property name="robot_name" value= "r2/" />
+  <property name="robot_name" value= "r2/" />
 
   <link name="${robot_name}robot_world"/>
 

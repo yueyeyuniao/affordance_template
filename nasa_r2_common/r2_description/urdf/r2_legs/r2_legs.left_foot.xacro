@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot>
 
-  <xacro:property name="left_leg_gripper_j0_damping" value= "1.0" />
-  <xacro:property name="left_leg_gripper_j0_friction" value= "0.0" />
-  <xacro:property name="left_leg_gripper_j1_damping" value= "1.0" />
-  <xacro:property name="left_leg_gripper_j1_friction" value= "0.0" />
-  <xacro:property name="left_leg_gripper_j1_damping" value= "1.0" />
-  <xacro:property name="left_leg_gripper_j1_friction" value= "0.0" />
+  <property name="left_leg_gripper_j0_damping" value= "1.0" />
+  <property name="left_leg_gripper_j0_friction" value= "0.0" />
+  <property name="left_leg_gripper_j1_damping" value= "1.0" />
+  <property name="left_leg_gripper_j1_friction" value= "0.0" />
+  <property name="left_leg_gripper_j1_damping" value= "1.0" />
+  <property name="left_leg_gripper_j1_friction" value= "0.0" />
 
   <joint name="${robot_name}fixed/left_ankle_roll/left_leg_foot" type="fixed">
     <parent link="${robot_name}left_ankle_roll"/>

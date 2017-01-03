@@ -84,7 +84,7 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES v1_gazebo
 #  CATKIN_DEPENDS roscpp rospy sensor_msgs std_msgs
-#  DEPENDS 
+#  DEPENDS system_lib
 )
 
 execute_process(COMMAND setup.sh ${CMAKE_SOURCE_DIR}/)

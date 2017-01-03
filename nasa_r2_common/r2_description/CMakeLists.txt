@@ -76,7 +76,7 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES r2_control
 #  CATKIN_DEPENDS other_catkin_pkg
-#  DEPENDS 
+#  DEPENDS system_lib
 )
 
 ###########

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <root xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
-      xmlns:interface="http://www.ros.org/wiki/xacro"
+      xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
       xmlns:xacro="http://ros.org/wiki/xacro">
   
   <xacro:macro name="grasshopper2_cam_gazebo_v0" params="camera_name frame_name">

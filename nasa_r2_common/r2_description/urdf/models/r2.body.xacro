@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot>
 
-  <xacro:property name="waist_j0_damping" value= "10.0" />
-  <xacro:property name="waist_j0_friction" value= "0.0" />
+  <property name="waist_j0_damping" value= "10.0" />
+  <property name="waist_j0_friction" value= "0.0" />
 
   <joint name="${robot_name}waist/joint0" type="revolute">
     <parent link="${robot_name}robot_base"/>

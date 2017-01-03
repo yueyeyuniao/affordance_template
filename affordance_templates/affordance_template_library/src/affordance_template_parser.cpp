@@ -282,10 +282,18 @@ bool AffordanceTemplateParser::loadFromFile(const std::string& filename, Afforda
               rgba << shp.rgba[0] << " " << shp.rgba[1] << " " << shp.rgba[2] << " " << shp.rgba[3];
               shape_str += shp.type + " colored: " + shp.color + " using RGBA: " + rgba.str();
           }
+
+	if (shp.type == "cylinder"){
+	  const rapidjson::Value& ra = objects[i]["shape"]["radius"];
+          shp.radius = ra.GetDouble();
+	  const rapidjson::Value& le = objects[i]["shape"]["length"];
+          shp.length = le.GetDouble();}
+	else{
           const rapidjson::Value& sz = objects[i]["shape"]["size"];
           shp.size[0] = sz[0].GetDouble();
           shp.size[1] = sz[1].GetDouble();
-          shp.size[2] = sz[2].GetDouble();
+          shp.size[2] = sz[2].GetDouble();}
+	
 
           DisplayObject display_object;
           display_object.name = objects[i]["name"].GetString();

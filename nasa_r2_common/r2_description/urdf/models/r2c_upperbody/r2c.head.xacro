@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot>
 
-  <xacro:property name="neck_j0_damping" value= "10.0" />
-  <xacro:property name="neck_j0_friction" value= "0.0" />
-  <xacro:property name="neck_j1_damping" value= "10.0" />
-  <xacro:property name="neck_j1_friction" value= "0.0" />
-  <xacro:property name="neck_j2_damping" value= "10.0" />
-  <xacro:property name="neck_j2_friction" value= "0.0" />
+  <property name="neck_j0_damping" value= "10.0" />
+  <property name="neck_j0_friction" value= "0.0" />
+  <property name="neck_j1_damping" value= "10.0" />
+  <property name="neck_j1_friction" value= "0.0" />
+  <property name="neck_j2_damping" value= "10.0" />
+  <property name="neck_j2_friction" value= "0.0" />
 
-  <xacro:property name="effort_limit" value= "10000.0" />
-  <xacro:property name="velocity_limit" value= "1000.0" />
+  <property name="effort_limit" value= "10000.0" />
+  <property name="velocity_limit" value= "1000.0" />
 
   <joint name="${robot_name}neck/joint0" type="revolute">
     <parent link="${robot_name}waist_center"/>

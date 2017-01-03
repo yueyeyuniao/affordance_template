@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot>
 
-  <xacro:property name="left_leg_gripper_j0_damping" value= "1.0" />
-  <xacro:property name="left_leg_gripper_j0_friction" value= "0.0" />
-  <xacro:property name="left_leg_gripper_j1_damping" value= "1.0" />
-  <xacro:property name="left_leg_gripper_j1_friction" value= "0.0" />
-  <xacro:property name="left_leg_gripper_j1_damping" value= "1.0" />
-  <xacro:property name="left_leg_gripper_j1_friction" value= "0.0" />
+  <property name="left_leg_gripper_j0_damping" value= "1.0" />
+  <property name="left_leg_gripper_j0_friction" value= "0.0" />
+  <property name="left_leg_gripper_j1_damping" value= "1.0" />
+  <property name="left_leg_gripper_j1_friction" value= "0.0" />
+  <property name="left_leg_gripper_j1_damping" value= "1.0" />
+  <property name="left_leg_gripper_j1_friction" value= "0.0" />
 
 <!--  placeholder for screw joint-->
   <joint name="${robot_name}left_leg/gripper/joint0" type="revolute">

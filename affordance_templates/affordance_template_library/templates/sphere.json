@@ -1,0 +1,57 @@
+{
+  "name": "Sphere",
+  "image": "package://affordance_template_library/images/sphere.jpg",
+  "display_objects": [
+    {
+      "name": "sphere",
+      "shape": {
+        "type": "sphere",  
+        "material": {
+          "color": "red",
+          "rgba": [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ]
+        },
+        "size": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "origin": {
+        "xyz": [
+          0.263512521982193,
+          0.21625950932502747,
+          0.3662518560886383
+        ],
+        "rpy": [
+          1.5709076767419997,
+          0.03607377061592704,
+          1.5470962509477595
+        ]
+      },
+      "controls": {
+        "xyz": [
+          true,
+          true,
+          true
+        ],
+        "rpy": [
+          true,
+          true,
+          true
+        ],
+        "scale": 0.1
+      }
+    }
+  ],
+  "end_effector_trajectory": [
+    {
+      "name": "test",
+      "end_effector_group": []
+    }
+  ]
+}

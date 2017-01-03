@@ -10,7 +10,7 @@
     
   <!-- load robot -->
   <group if="$(arg robot)">
-    <param name="$(arg robot_description)" command="$(find xacro)/xacro --inorder '$(find r2_description)/robots/r2.urdf.xacro'" />
+    <param name="$(arg robot_description)" command="$(find xacro)/xacro.py '$(find r2_description)/robots/r2.urdf.xacro'" />
     <param name="$(arg robot_description)_semantic" textfile="$(find r2_moveit_config)/config/r2.srdf" />
   </group>
 

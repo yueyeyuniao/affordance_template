@@ -26,6 +26,7 @@
   <run_depend>gazebo_ros</run_depend>
   <run_depend>sensor_msgs</run_depend>
   <run_depend>std_msgs</run_depend>
+  <run_depend>r2_msgs</run_depend>
   <run_depend>r2_control</run_depend>
   <run_depend>r2_description</run_depend>
   <run_depend>joint_trajectory_controller</run_depend>

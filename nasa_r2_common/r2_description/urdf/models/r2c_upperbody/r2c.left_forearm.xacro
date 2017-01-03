@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot>
 
-  <xacro:property name="left_arm_j5_damping" value= "1.0" />
-  <xacro:property name="left_arm_j5_friction" value= "0.0" />
-  <xacro:property name="left_arm_j6_damping" value= "1.0" />
-  <xacro:property name="left_arm_j6_friction" value= "0.0" />
+  <property name="left_arm_j5_damping" value= "1.0" />
+  <property name="left_arm_j5_friction" value= "0.0" />
+  <property name="left_arm_j6_damping" value= "1.0" />
+  <property name="left_arm_j6_friction" value= "0.0" />
 
   <link name="${robot_name}left_lower_arm">
     <visual>

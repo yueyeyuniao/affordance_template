@@ -6,7 +6,7 @@
 	<param name="use_gui" value="$(arg gui)"/>
 
 	<!-- load model -->
-	<param name="robot_description" command="$(find xacro)/xacro '$(find r2_description)/robots/r2.urdf.xacro'" />
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find r2_description)/robots/r2.urdf.xacro'" />
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
 
 	<!-- load displays -->

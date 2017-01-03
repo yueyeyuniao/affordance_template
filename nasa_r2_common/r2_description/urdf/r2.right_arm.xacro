@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot>
 
-  <xacro:property name="right_arm_j0_damping" value= "2.5" />
-  <xacro:property name="right_arm_j0_friction" value= "0.0" />
-  <xacro:property name="right_arm_j1_damping" value= "2.5" />
-  <xacro:property name="right_arm_j1_friction" value= "0.0" />
-  <xacro:property name="right_arm_j2_damping" value= "2.5" />
-  <xacro:property name="right_arm_j2_friction" value= "0.0" />
-  <xacro:property name="right_arm_j3_damping" value= "1.0" />
-  <xacro:property name="right_arm_j3_friction" value= "0.0" />
-  <xacro:property name="right_arm_j4_damping" value= "1.0" />
-  <xacro:property name="right_arm_j4_friction" value= "0.0" />
-  <xacro:property name="right_arm_j5_damping" value= "1.0" />
-  <xacro:property name="right_arm_j5_friction" value= "0.0" />
-  <xacro:property name="right_arm_j6_damping" value= "1.0" />
-  <xacro:property name="right_arm_j6_friction" value= "0.0" />
+  <property name="right_arm_j0_damping" value= "2.5" />
+  <property name="right_arm_j0_friction" value= "0.0" />
+  <property name="right_arm_j1_damping" value= "2.5" />
+  <property name="right_arm_j1_friction" value= "0.0" />
+  <property name="right_arm_j2_damping" value= "2.5" />
+  <property name="right_arm_j2_friction" value= "0.0" />
+  <property name="right_arm_j3_damping" value= "1.0" />
+  <property name="right_arm_j3_friction" value= "0.0" />
+  <property name="right_arm_j4_damping" value= "1.0" />
+  <property name="right_arm_j4_friction" value= "0.0" />
+  <property name="right_arm_j5_damping" value= "1.0" />
+  <property name="right_arm_j5_friction" value= "0.0" />
+  <property name="right_arm_j6_damping" value= "1.0" />
+  <property name="right_arm_j6_friction" value= "0.0" />
 
   <joint name="${robot_name}right_arm/joint0" type="revolute">
     <parent link="${robot_name}chest_base"/>
