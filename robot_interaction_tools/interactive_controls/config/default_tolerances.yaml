@@ -1,0 +1,29 @@
+tolerances:
+  modes:
+    - position
+    - orientation
+  orientation_tolerances:
+    - unbounded_all
+    - unbounded_roll
+    - unbounded_pitch
+    - unbounded_yaw
+    - five_degrees
+    - exact_angle
+  position_tolerances:
+    - exact_position
+    - millimeter 
+    - centimeter 
+    - decimeter
+  orientation/unbounded_all : [3.1416, 3.1416, 3.1416]
+  orientation/unbounded_roll : [3.1416, 0, 0]
+  orientation/unbounded_pitch : [0, 3.1416, 0]
+  orientation/unbounded_yaw : [0, 0, 3.1416]
+  orientation/five_degrees: [0.0873, 0.0873, 0.0873]
+  orientation/exact_angle: [0.0, 0.0, 0.0]
+  position/exact_position : [0.0, 0.0, 0.0]
+  position/millimeter : [0.001, 0.001, 0.001]
+  position/centimeter : [0.01, 0.01, 0.01]
+  position/decimeter :  [0.1, 0.1, 0.1]
+  defaults:
+    position : exact_position
+    orientation : exact_angle

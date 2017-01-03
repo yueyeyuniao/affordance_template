@@ -1,0 +1,9 @@
+groups :
+  joint:
+    - head
+  cartesian: 
+    - left_arm
+    - right_arm
+  endeffector: 
+    - left_hand
+    - right_hand

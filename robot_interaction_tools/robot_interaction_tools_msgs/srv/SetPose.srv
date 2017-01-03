@@ -1,0 +1,5 @@
+string group_name
+bool plan
+geometry_msgs/PoseStamped pose_stamped
+----
+bool result

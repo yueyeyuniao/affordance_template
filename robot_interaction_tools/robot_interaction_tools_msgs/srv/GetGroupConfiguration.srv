@@ -1,0 +1,8 @@
+# specific group (leave empty to get all)
+string group_name
+
+---
+
+# group configs
+PlanGroupConfiguration[] group_configurations
+

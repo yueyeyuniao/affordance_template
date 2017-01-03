@@ -1,0 +1,6 @@
+string group_name
+sensor_msgs/JointState[] goal_states
+bool execute_on_plan
+bool show_path
+----
+bool result

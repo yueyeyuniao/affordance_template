@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="prefix" default="predictive"/>
+    <arg name="base_frame" default="world"/>
+
+    <node pkg="tf" type="static_transform_publisher" name="$(arg prefix)_broadcaster" args="0 0 0 0 0 0 $(arg base_frame) $(arg prefix)/$(arg base_frame) 100" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="$(arg prefix)_state_pub">
+      <remap from="joint_states" to="$(arg prefix)/joint_states" />
+      <param name="tf_prefix" value="$(arg prefix)" />
+    </node>
+
+</launch>

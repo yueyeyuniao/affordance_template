@@ -1,0 +1,46 @@
+actions: []
+authors: ''
+brief: ''
+bugtracker: ''
+depends:
+- trajectory_msgs
+- catkin
+- rviz
+- pluginlib
+- message_runtime
+- sensor_msgs
+- geometry_msgs
+- moveit_commander
+- visualization_msgs
+- message_generation
+- moveit_ros_planning_interface
+description: The robot_interaction_tools package
+license: BSD
+maintainers: Stephen Hart <swhart@traclabs.com>
+msgs:
+- CartesianPlanRequestSpecification
+- JointMask
+- JointNameMap
+- JointPlanRequestSpecification
+- PlanGroupConfiguration
+- StringArray
+- ToleranceInfo
+- ToleranceInfoArray
+- FootstepData
+- FootstepDataArray
+package_type: package
+repo_url: ''
+srvs:
+- AddGroup
+- CartesianPlanCommand
+- ConfigurePlanningService
+- EndEffectorCommand
+- ExecuteCommand
+- GetHandType
+- GetJointNames
+- GetPlanningServiceConfiguration
+- InteractiveControlsInterface
+- JointPlanCommand
+- RemoveGroup
+- SetPose
+url: ''

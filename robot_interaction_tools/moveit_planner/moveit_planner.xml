@@ -1,0 +1,5 @@
+<library path="libmoveit_planner">
+  <class type="moveit_planner::MoveItPlanner" base_class_type="planner_interface::PlannerInterface">
+    <description>This is a planner plugin for MoveIt!</description>
+  </class>
+</library>

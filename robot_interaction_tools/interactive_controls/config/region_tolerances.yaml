@@ -1,0 +1,49 @@
+tolerances:
+  modes:
+    - position
+    - orientation
+  orientation_tolerances:
+    - full_cyl
+    - half_cyl
+    - quarter_cyl
+    - eighth_cyl
+    - sixteenth_cyl
+    - sphere
+    - hemisphere
+    - quarter_cone
+    - eighth_cone
+    - sixteenth_cone
+    - half
+    - quarter
+    - eighth
+    - sixteenth
+    - exact_angle
+    - dual_arm
+    - dual_arm_max
+  position_tolerances:
+    - millimeter 
+    - centimeter 
+    - decimeter 
+  orientation/full_cyl : [3.1416, 0.0349, 0.0349]
+  orientation/half_cyl: [1.5708, 0.0349, 0.0349]
+  orientation/quarter_cyl: [0.7854, 0.0349, 0.0349]
+  orientation/eighth_cyl: [0.3927, 0.0349, 0.0349]
+  orientation/sixteenth_cyl: [0.1963, 0.0349, 0.0349]
+  orientation/sphere: [3.1416, 3.1416, 3.1416]
+  orientation/hemisphere: [3.1416, 1.5708, 1.5708]
+  orientation/quarter_cone: [3.1416, 0.7854, 0.7854]
+  orientation/eighth_cone: [3.1416, 0.3927, 0.3927]
+  orientation/sixteenth_cone: [3.1416, 0.1963, 0.1963]
+  orientation/half: [1.5708, 1.5708, 1.5708]
+  orientation/quarter: [0.7854, 0.7854, 0.7854]
+  orientation/eighth: [0.3927, 0.3927, 0.3927]
+  orientation/sixteenth: [0.1963, 0.1963, 0.1963]
+  orientation/exact_angle: [0.0349, 0.0349, 0.0349]
+  orientation/dual_arm: [0.0174, 0.0174, 0.0174]
+  orientation/dual_arm_max: [0.0698, 0.0698, 0.0698]
+  position/millimeter : [0.001, 0.001, 0.001]
+  position/centimeter : [0.01, 0.01, 0.01]
+  position/decimeter :  [0.1, 0.1, 0.1]
+  defaults:
+    position : centimeter
+    orientation : sphere

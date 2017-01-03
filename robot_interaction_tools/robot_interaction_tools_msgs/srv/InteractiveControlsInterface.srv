@@ -1,0 +1,135 @@
+int8 action_type
+  int8 GET_INFO = 0
+  int8 ADD_GROUP = 1
+  int8 REMOVE_GROUP = 2
+  int8 SET_MARKER_POSE = 3
+  int8 SET_SHOW_PATH = 4
+  int8 SET_PLAN_ON_MOVE = 5
+  int8 SET_EXECUTE_ON_PLAN = 6
+  int8 SET_TOLERANCES = 7
+  int8 SET_JOINT_MAP = 8
+  int8 EXECUTE_STORED_POSE = 9
+  int8 TOGGLE_POSTURE_CONTROLS = 10
+  int8 SYNC_MARKERS_TO_ROBOT = 11
+  int8 PLAN_TO_MARKER = 12
+  int8 EXECUTE_PLAN = 13
+  int8 ADD_NAVIGATION_WAYPOINT = 14
+  int8 DELETE_NAVIGATION_WAYPOINT = 15
+  int8 PLAN_NAVIGATION_PATH = 16
+  int8 EXECUTE_NAVIGATION_PATH = 17
+  int8 PLAN_FOOTSTEPS_IN_PATH = 18
+  int8 SET_FIRST_FOOT = 19
+  int8 SET_NAVIGATION_MODE = 20
+  int8 SET_ACCOMMODATE_TERRAIN_IN_NAVIGATION = 21
+  int8 EXECUTE_DIRECT_MOVE = 22
+  int8 SYNC_NAVIGATION_TO_ROBOT_LOCATION = 23
+  int8 SYNC_NAVIGATION_TO_ROBOT_ORIENTATION = 24
+  int8 SYNC_NAVIGATION_TO_PATH_ORIENTATION = 25
+  int8 SAVE_FOOTSTEP_PATH = 26
+  int8 SET_TOOL_OFFSET = 27
+  int8 CLEAR_TOOL_OFFSET = 28
+  int8 SET_CONDITIONING_METRIC = 29
+  int8 SET_TASK_COMPATIBILITY = 30
+  
+  
+# name of groups to add, remove, or index into for below structures (i.e., the order of this list defines the data below)
+string[] group_name
+
+# types of groups if being added
+string[] group_type
+
+# the stored pose to go to
+string[] stored_pose_name
+
+# should be "all_points" or "last_point"
+string[] path_visualization_mode
+
+# sets the interactive markers (for cartesian groups only) to the given poses
+geometry_msgs/PoseStamped[] goal_pose
+
+# the joint mask for each group
+JointMask[] joint_mask
+
+# the different tolerance modes to set
+ToleranceInfo[] tolerance
+
+# current setting of flags
+bool[] execute_on_plan
+bool[] plan_on_move
+
+# the names of the navigation_points that will be considered
+string[] navigation_waypoint_name
+
+# current setting of navigation waypoint flags
+bool plan_footsteps
+
+# current setting of accommodate_terrain for navigation flag
+bool accommodate_terrain_in_navigation
+
+# the navigation mode to use
+string navigation_mode
+
+# the filename to save the footstep path to
+string footstep_filename
+
+# the comdintioning metric
+string conditioning_metric
+
+# the task compatibility vector
+geometry_msgs/Pose compatibility_vector
+
+----
+
+# the action type
+int8 action_type
+
+# returns all groups in robot config file
+string[] group_name
+string[] group_type
+
+# returns the subset of group_name that are displayed/active
+string[] active_group_name
+
+# returns the names of groups that have valid plans generated 
+bool[] plan_found 
+
+# current joint mask for each group in active_group_name
+JointMask[] joint_mask
+
+# current joint names for each group
+JointNameMap[] joint_names
+
+# current path visualization modes
+string[] path_visualization_mode
+         
+# the different tolerance modes (applicable to all groups)
+ToleranceInfo[] tolerance
+
+# current tolerance settings for each group
+ToleranceInfoArray[] tolerance_setting
+
+# current setting of flags
+bool[] execute_on_plan
+bool[] plan_on_move
+
+# the stored poses for each group
+StringArray[] stored_pose_list
+
+# if navigation controls exist
+bool has_navigation_controls
+
+# new setting of navigation waypoint flags
+bool left_foot_first
+bool plan_footsteps
+
+# the names of the navigation_points to be deleted, added from, or planned/executed to
+string[] navigation_waypoint_name
+
+# the navigation modes
+string[] navigation_modes
+
+# the current navigation_mode
+string navigation_mode
+
+# current setting of accommodate_terrain for navigation flag
+bool accommodate_terrain_in_navigation

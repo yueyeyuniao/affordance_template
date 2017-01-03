@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package>
+  <name>rviz_interactive_controls_panel</name>
+  <version>0.0.0</version>
+  <description>Package for interactive controls as an RViz panel</description>
+
+  <maintainer email="swhart@traclabs.com">Stephen Hart</maintainer>
+  <maintainer email="seth@traclabs.com">Seth Gee</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>rviz</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>actionlib</build_depend>
+  <build_depend>planner_interface</build_depend>
+  <build_depend>robot_interaction_tools_msgs</build_depend>
+  
+  <run_depend>rviz</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>actionlib</run_depend>
+  <run_depend>planner_interface</run_depend>
+  <run_depend>robot_interaction_tools_msgs</run_depend>
+
+  <export>
+      <rviz plugin="${prefix}/plugin_description.xml"/>
+  </export>
+
+</package>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="interactive_controls" pkg="interactive_controls" type="interactive_controls" respawn="false" output="screen">
+    <param name="robot_name" value="r2"/>
+    <param name="planner_plugin" value="moveit_planner::MoveItPlanner"/>
+    <rosparam command="load" file="$(find interactive_controls)/config/default_tolerances.yaml" />
+    <rosparam command="load" file="$(find interactive_controls)/config/r2.yaml"/>
+  </node>
+</launch>
+
+
+

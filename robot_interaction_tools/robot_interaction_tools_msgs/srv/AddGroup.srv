@@ -1,0 +1,5 @@
+string name
+string type
+string[] joint_mask
+----
+bool result

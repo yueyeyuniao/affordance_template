@@ -1,0 +1,12 @@
+#if true, dense_reach will move down the path even if it can't solve the whole path
+#bool move_as_far_as_possible #9/1/2015 - do we still want to use this
+
+#if left or right poses are empty, fill it with fixed offsets from the filled one
+#bool maintain_hand_pose_offsets #9/1/2015 - do we still want to use this
+
+string group_name
+geometry_msgs/PoseStamped[] goal_poses
+bool execute_on_plan
+bool show_path
+----
+bool result

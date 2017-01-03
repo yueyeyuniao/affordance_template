@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find rit_utils)/launch/robot_display.launch">
+    <arg name="prefix" value="rit"/>
+    <arg name="base_frame" value="base_link"/>
+  </include>
+
+  <node name="interactive_controls" pkg="interactive_controls" type="interactive_controls" respawn="false" output="screen">
+    <param name="robot_name" value="fetch"/>
+    <param name="planner_plugin" value="moveit_planner::MoveItPlanner"/>
+    <param name="param/trajectory_scaler" value="0.75"/>
+    <param name="param/trajectory_density" value="1.0"/>
+
+    <rosparam command="load" file="$(find interactive_controls)/config/default_tolerances.yaml" />
+    <rosparam command="load" file="$(find interactive_controls)/config/fetch.yaml"/>
+  </node>
+</launch>
+
+
+

@@ -1,0 +1,7 @@
+groups :
+  cartesian:
+    - arm
+  joint:
+    - head
+  endeffector:
+    - gripper

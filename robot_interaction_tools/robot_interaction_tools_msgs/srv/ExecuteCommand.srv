@@ -1,0 +1,4 @@
+string[] group_names
+int8[] ids
+----
+bool result

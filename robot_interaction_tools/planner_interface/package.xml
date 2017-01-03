@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<package>
+  <name>planner_interface</name>
+  <version>0.0.0</version>
+  <description>The planner_interface package</description>
+
+  <maintainer email="swhart@traclabs.com">Stephen Hart</maintainer>
+  <maintainer email="seth@traclabs.com">Seth Gee</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>pkg-config</buildtool_depend>
+
+  <build_depend>message_runtime</build_depend>
+  <build_depend>control_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>moveit_ros_planning_interface</build_depend>
+  <build_depend>pluginlib</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>moveit_msgs</build_depend>
+  <build_depend>trajectory_msgs</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+  <build_depend>robot_interaction_tools_msgs</build_depend>
+  <build_depend>urdfdom</build_depend>
+  <build_depend>srdfdom</build_depend>
+  <build_depend>kdl_conversions</build_depend>
+  <build_depend>rit_utils</build_depend>
+
+  <run_depend>message_runtime</run_depend>
+  <run_depend>control_msgs</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>moveit_ros_planning_interface</run_depend>
+  <run_depend>pluginlib</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>moveit_msgs</run_depend>
+  <run_depend>trajectory_msgs</run_depend>
+  <run_depend>visualization_msgs</run_depend>
+  <run_depend>robot_interaction_tools_msgs</run_depend>
+  <run_depend>urdfdom</run_depend>
+  <run_depend>srdfdom</run_depend>
+  <run_depend>kdl_conversions</run_depend>
+  <run_depend>rit_utils</run_depend>
+
+</package>
