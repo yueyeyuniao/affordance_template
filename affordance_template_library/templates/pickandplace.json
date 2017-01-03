@@ -1,0 +1,140 @@
+{
+  "name": "PickAndPlace",
+  "image": "package://affordance_template_library/images/robot.png",
+  "display_objects": [
+    {
+      "name": "pick",
+      "shape": {
+        "type": "box",
+        "material": {
+          "color": "red",
+          "rgba": [1.0, 0.0, 0.0, 1.0]
+        },
+        "size": [0.1,0.1,0.1]
+      },
+      "origin" : {
+        "xyz": [0.5,-0.12, 0.24],
+        "rpy": [0.0, 0.0, -0.22]
+      },
+      "controls": {
+        "xyz": [true, true, true],
+        "rpy": [true, true, true],
+        "scale": 0.3
+      }
+    },
+    {
+      "name": "place",
+      "parent": "pick",
+      "shape": {
+        "type": "box",
+        "material": {
+          "color": "blue",
+          "rgba": [0.0, 0.0, 1.0, 1.0]
+        },
+        "size": [0.1,0.1,0.1]
+      },
+      "origin" : {
+        "xyz": [0.11,-0.23, 0.01],
+        "rpy": [0.0, 0.0, -0.22]
+      },
+      "controls": {
+        "xyz": [true, true, true],
+        "rpy": [true, true, true],
+        "scale": 0.3
+      }
+    }
+  ],
+
+  "end_effector_trajectory": [
+    {
+      "name": "Left Hand Pick and Place",
+      "end_effector_group" : [
+        { 
+          "id": 0,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 0,
+              "display_object": "pick",
+              "origin": {
+                "xyz": [-0.1, 0.03, 0.15],
+                "rpy": [1.575, 0.16, -0.156]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 0,
+              "display_object": "pick",
+              "origin": {
+                "xyz": [-0.0, 0.03, 0.05],
+                "rpy": [1.575, 0.16, -0.156]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 2,
+              "display_object": "pick",
+              "origin": {
+                "xyz": [-0.0, 0.03, 0.05],
+                "rpy": [1.575, 0.16, -0.156]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 2,
+              "display_object": "pick",
+              "origin": {
+                "xyz": [-0.03, -0.128, 0.14],
+                "rpy": [1.575, 0.16, -0.157]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 2,
+              "display_object": "place",
+              "origin": {
+                "xyz": [-0.047, 0.03, 0.07],
+                "rpy": [1.575, 0.16, -0.156]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 0,
+              "display_object": "place",
+              "origin": {
+                "xyz": [-0.047, 0.03, 0.07],
+                "rpy": [1.575, 0.16, -0.156]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+

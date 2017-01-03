@@ -1,0 +1,82 @@
+{
+  "name": "Cube",
+  "image": "package://affordance_template_library/images/cube.png",
+  "display_objects": [
+    {
+      "name": "cube",
+       "shape": {
+        "type": "box",
+        "material": {
+          "color": "red",
+          "rgba": [0.0, 1.0, 0.0, 1.0]
+        },
+        "size": [0.04, 0.08, 0.08]
+      },
+      "origin" : {
+        "xyz": [0.0, 0.0, 0.0],
+        "rpy": [0.0, 0.0, 1.57]
+      },
+      "controls": {
+        "xyz": [true, true, true],
+        "rpy": [true, true, true],
+        "scale": 0.1
+      }
+    }
+  ],
+
+  "end_effector_trajectory": [
+    {
+      "name": "Hand Top Grasp",
+      "end_effector_group" : [
+        { 
+          "id": 0,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 0,
+              "display_object": "cube",
+              "origin": {
+                "xyz": [0.0, 0.0, -0.16],
+                "rpy": [0.0, -1.57, -1.57]
+              },
+              "controls": {
+                  "xyz": [true, true, true],
+                  "rpy": [true, true, true],
+                  "scale": 0.1
+              },
+              "planner_type": "JOINT"
+            },
+	          {
+              "ee_pose": 3,
+              "display_object": "cube",
+              "origin": {
+                "xyz": [0.0, 0.0, -0.02],
+                "rpy": [0.0, -1.57, -1.57]
+              },
+              "controls": {
+                  "xyz": [true, true, true],
+                  "rpy": [true, true, true],
+                  "scale": 0.1
+              }
+            },
+	          {
+              "ee_pose": 3,
+              "display_object": "cube",
+              "origin": {
+                "xyz": [0.0, 0.0, -0.16],
+                "rpy": [0.0, -1.57, -1.57]
+              },
+              "controls": {
+                  "xyz": [true, true, true],
+                  "rpy": [true, true, true],
+                  "scale": 0.1
+              }
+            }
+
+	        ]
+        }
+      ]
+    }
+  ]
+}
+
+

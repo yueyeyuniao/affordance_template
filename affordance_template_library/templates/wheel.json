@@ -1,0 +1,346 @@
+{
+  "name": "Wheel",
+  "image": "package://affordance_template_library/images/torus.jpg",
+  "display_objects": [
+    {
+      "name": "wheel",
+      "shape": {
+        "type": "mesh",
+        "data": "package://affordance_template_library/models/torus.dae",
+        "size": [1.15, 1.15, 1.15]
+      },
+      "origin" : {
+        "xyz": [0.0, 0.0, 0.0],
+        "rpy": [0.0, 1.57, 0.0]
+      },
+      "controls": {
+        "xyz": [true, true, true],
+        "rpy": [true, true, true],
+        "scale": 0.3
+      }
+    }
+  ],
+  "end_effector_trajectory": [
+    {
+      "name": "Left Hand Counter Clockwise Turn",
+      "end_effector_group" : [
+        { 
+          "id": 0,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.0, 0.3, 0.0],
+                "rpy": [0.0, -1.57, 0.0]
+              },
+              "controls": {
+                  "xyz": [true, true, true],
+                  "rpy": [false, true, true],
+                  "scale": 0.25
+              },
+              "tool_offset": {
+                "xyz": [0.0, 0.0, 0.0],
+                "rpy": [0.0, 0.0, 0.0]
+              }
+            },
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.0, 0.198, 0.0],
+                "rpy": [0.0, -1.57, 0.0]
+              },
+              "controls": {
+                  "xyz": [true, true, true],
+                  "rpy": [false, true, true],
+                  "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 2,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.0, 0.198, 0.0],
+                "rpy": [0.0, -1.57, 0.0]
+              },
+              "controls": {
+                  "xyz": [true, true, true],
+                  "rpy": [false, true, true],
+                  "scale": 0.25
+              },
+              "tool_offset": {
+                "xyz": [0.0, -0.198, 0.0],
+                "rpy": [0.0, 0.0, 0.0]
+              }
+            },
+            {
+              "ee_pose": 2,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.1, 0.173, 0.0],
+                "rpy": [0.0, -1.57, -0.4]
+              },
+              "controls": {
+                  "xyz": [true, true, true],
+                  "rpy": [false, true, true],
+                  "scale": 0.25
+              },
+              "tool_offset": {
+                "xyz": [0.0, -0.198, 0.024],
+                "rpy": [0.0, 0.0, 0.0]
+              }
+            },
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.1, 0.173, 0.0],
+                "rpy": [0.0, -1.57, -0.4]
+              },
+              "controls": {
+                  "xyz": [true, true, true],
+                  "rpy": [false, true, true],
+                  "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Right Hand Counter Clockwise Turn",
+      "end_effector_group" : [
+        {
+          "id": 1,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.0, -0.3, 0.0],
+                "rpy": [0.0, -1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [false, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.0, -0.198, 0.0],
+                "rpy": [0.0, -1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [false, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 2,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.0, -0.198, 0.0],
+                "rpy": [0.0, -1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [false, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 2,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [-0.1, -0.172, 0.0],
+                "rpy": [0.0, -1.57, -0.63]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [false, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [-0.1, -0.172, 0.0],
+                "rpy": [0.0, -1.57, -0.63]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [false, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two Hand Counter Clockwise Turn",
+      "end_effector_group" : [
+        { 
+          "id": 0,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.0, 0.3, 0.0],
+                "rpy": [0.0, -1.57, 0.0]
+              },
+              "controls": {
+                  "xyz": [true, true, true],
+                  "rpy": [false, true, true],
+                  "scale": 0.25
+              },
+              "tool_offset": {
+                "xyz": [0.0, 0.0, 0.0],
+                "rpy": [0.0, 0.0, 0.0]
+              }
+            },
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.0, 0.198, 0.0],
+                "rpy": [0.0, -1.57, 0.0]
+              },
+              "controls": {
+                  "xyz": [true, true, true],
+                  "rpy": [false, true, true],
+                  "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 2,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.0, 0.198, 0.0],
+                "rpy": [0.0, -1.57, 0.0]
+              },
+              "controls": {
+                  "xyz": [true, true, true],
+                  "rpy": [false, true, true],
+                  "scale": 0.25
+              },
+              "tool_offset": {
+                "xyz": [0.0, -0.198, 0.0],
+                "rpy": [0.0, 0.0, 0.0]
+              }
+            },
+            {
+              "ee_pose": 2,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.1, 0.173, 0.0],
+                "rpy": [0.0, -1.57, -0.4]
+              },
+              "controls": {
+                  "xyz": [true, true, true],
+                  "rpy": [false, true, true],
+                  "scale": 0.25
+              },
+              "tool_offset": {
+                "xyz": [0.0, -0.198, 0.024],
+                "rpy": [0.0, 0.0, 0.0]
+              }
+            },
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.1, 0.173, 0.0],
+                "rpy": [0.0, -1.57, -0.4]
+              },
+              "controls": {
+                  "xyz": [true, true, true],
+                  "rpy": [false, true, true],
+                  "scale": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.0, -0.3, 0.0],
+                "rpy": [0.0, -1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [false, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.0, -0.198, 0.0],
+                "rpy": [0.0, -1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [false, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 2,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [0.0, -0.198, 0.0],
+                "rpy": [0.0, -1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [false, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 2,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [-0.1, -0.172, 0.0],
+                "rpy": [0.0, -1.57, -0.63]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [false, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [-0.1, -0.172, 0.0],
+                "rpy": [0.0, -1.57, -0.63]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [false, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+

@@ -1,0 +1,15 @@
+# service call to add a new trajectory to a template
+
+# the template class type 
+string class_type
+
+# the id of the template running to add the trajectory to
+uint8 id
+
+# the new trajectory name
+string trajectory_name 
+
+---
+# return status
+bool status
+

@@ -1,0 +1,12 @@
+# service call to kill an recognition object
+
+# The arecognition object type to delete 
+string object_type
+
+# the particular id
+uint8 id
+
+---
+
+# status
+bool status

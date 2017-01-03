@@ -1,0 +1,9 @@
+# service call to scale display objects
+
+# the info to scale the object 
+ScaleDisplayObjectInfo scale_info
+
+---
+# return status
+bool status
+

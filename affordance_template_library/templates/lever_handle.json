@@ -1,0 +1,258 @@
+{
+  "image": "package://affordance_template_library/images/lever_handle.jpg", 
+  "display_objects": [
+    {
+      "origin": {
+        "rpy": [
+          -8.109729511402039e-09, 
+          0.05654004520651751, 
+          -5.302312449857094e-08
+        ], 
+        "xyz": [
+          0.25930994749069214, 
+          0.2953241169452667, 
+          0.0
+        ]
+      }, 
+      "shape": {
+        "type": "mesh", 
+        "data": "package://affordance_template_library/models/lever_handle.dae", 
+        "size": [
+          1, 
+          1, 
+          1
+        ]
+      }, 
+      "name": "handle", 
+      "controls": {
+        "rpy": [
+          true, 
+          true, 
+          true
+        ], 
+        "xyz": [
+          true, 
+          true, 
+          true
+        ], 
+        "scale": 0.3
+      }
+    }
+  ], 
+  "name": "LeverHandle", 
+  "end_effector_trajectory": [
+    {
+      "end_effector_group": [
+        {
+          "id": 0, 
+          "end_effector_waypoint": [
+            {
+              "origin": {
+                "rpy": [
+                  1.5804854373565618, 
+                  0.31146678490586077, 
+                  -0.1519297145085116
+                ], 
+                "xyz": [
+                  -0.2976434528827667, 
+                  -0.009950805455446243, 
+                  0.19153083860874176
+                ]
+              }, 
+              "ee_pose": 1, 
+              "controls": {
+                "rpy": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "xyz": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "scale": 0.25
+              }, 
+              "display_object": "handle"
+            }, 
+            {
+              "origin": {
+                "rpy": [
+                  1.6020206308958351, 
+                  0.4561850200989105, 
+                  -0.08262290581402863
+                ], 
+                "xyz": [
+                  -0.18691912293434143, 
+                  -0.07415144145488739, 
+                  0.10334521532058716
+                ]
+              }, 
+              "ee_pose": 1, 
+              "controls": {
+                "rpy": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "xyz": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "scale": 0.25
+              }, 
+              "display_object": "handle"
+            }, 
+            {
+              "origin": {
+                "rpy": [
+                  1.637766572644698, 
+                  1.1386632127751901, 
+                  -0.03555179206100881
+                ], 
+                "xyz": [
+                  -0.0956912487745285, 
+                  -0.05593717098236084, 
+                  0.14193275570869446
+                ]
+              }, 
+              "ee_pose": 1, 
+              "controls": {
+                "rpy": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "xyz": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "scale": 0.25
+              }, 
+              "display_object": "handle"
+            }, 
+            {
+              "origin": {
+                "rpy": [
+                  1.5989832430202764, 
+                  0.10537938491263511, 
+                  -0.09341623019135487
+                ], 
+                "xyz": [
+                  -0.12526670098304749, 
+                  -0.0510907880961895, 
+                  0.03977610915899277
+                ]
+              }, 
+              "ee_pose": 2, 
+              "controls": {
+                "rpy": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "xyz": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "scale": 0.25
+              }, 
+              "display_object": "handle"
+            }, 
+            {
+              "origin": {
+                "rpy": [
+                  2.1227539820876062, 
+                  0.10537941042540938, 
+                  -0.09341623491688447
+                ], 
+                "xyz": [
+                  -0.14143972098827362, 
+                  -0.04703941196203232, 
+                  -0.005246720276772976
+                ]
+              }, 
+              "ee_pose": 2, 
+              "controls": {
+                "rpy": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "xyz": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "scale": 0.25
+              }, 
+              "display_object": "handle"
+            }, 
+            {
+              "origin": {
+                "rpy": [
+                  2.0391149650136096, 
+                  0.10537940254119152, 
+                  -0.09341623919397089
+                ], 
+                "xyz": [
+                  -0.02165309712290764, 
+                  -0.14260424673557281, 
+                  -0.02927275002002716
+                ]
+              }, 
+              "ee_pose": 2, 
+              "controls": {
+                "rpy": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "xyz": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "scale": 0.25
+              }, 
+              "display_object": "handle"
+            }, 
+            {
+              "origin": {
+                "rpy": [
+                  1.7727710085352815, 
+                  0.9284958430775075, 
+                  -0.05677903237303125
+                ], 
+                "xyz": [
+                  -0.0017174780368804932, 
+                  -0.1160547286272049, 
+                  0.10651953518390656
+                ]
+              }, 
+              "ee_pose": 1, 
+              "controls": {
+                "rpy": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "xyz": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "scale": 0.25
+              }, 
+              "display_object": "handle"
+            }
+          ]
+        }
+      ], 
+      "name": "Left Hand Push"
+    }
+  ]
+}

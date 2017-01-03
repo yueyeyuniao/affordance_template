@@ -1,0 +1,27 @@
+robot_name: fetch
+planner_type: moveit_planner::MoveItPlanner
+config_package: fetch_moveit_config
+config_file: config/fetch.srdf
+frame_id: base_link
+root_offset: [0.5,0,0.5,3.14,0,0]
+end_effector_group_map:
+  - name: gripper
+    id: 0
+    pose_offset: [0,0,0,0,0,0]
+    tool_offset: [0.0,0,0,0,0,0]
+end_effector_pose_map:
+  - name: Hand Open Wide
+    group: gripper
+    id: 0
+  - name: Hand Open
+    group: gripper
+    id: 1
+  - name: Hand Close
+    group: gripper
+    id: 2
+  - name: Hand Close
+    group: gripper
+    id: 3
+  - name: Hand Close
+    group: gripper
+    id: 4

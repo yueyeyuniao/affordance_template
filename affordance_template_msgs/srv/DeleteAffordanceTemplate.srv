@@ -1,0 +1,12 @@
+# service call to kill an affordance template
+
+# The affordance template type to delete 
+string class_type
+
+# the particular id
+uint8 id
+
+---
+
+# status
+bool status

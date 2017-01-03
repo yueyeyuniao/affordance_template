@@ -1,0 +1,7 @@
+# service call to set poses of objects on the server
+
+DisplayObjectInfo[] objects
+
+---
+
+bool status

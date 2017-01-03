@@ -1,0 +1,12 @@
+# service call to add an recognition object
+
+# The recognition object to add (by type) 
+string object_type
+
+---
+
+# status
+bool status
+
+# the id of the recognition object of that type that was added
+uint8 id

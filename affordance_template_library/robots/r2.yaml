@@ -1,0 +1,50 @@
+robot_name: r2
+planner_type: moveit_planner::MoveItPlanner
+config_package: r2_fullbody_moveit_config
+config_file: config/r2_fullbody.srdf
+frame_id: r2/robot_base
+root_offset: [0.4,0,-0.2,3.14,0,0]
+end_effector_group_map:
+  - name: left_hand
+    id: 0
+    pose_offset: [0,0,0,1.57,0,0]
+  - name: right_hand
+    id: 1
+    pose_offset: [0,0,0,-1.57,0,0]
+  - name: left_foot
+    id: 2
+    pose_offset: [0.1,0.15,0,1.57,0,0]
+  - name: right_foot
+    id: 3
+    pose_offset: [0.1,-0.15,0.0,-1.57,0,0]
+end_effector_pose_map:
+  - name: Right Hand Open
+    group: right_hand
+    id: 0
+  - name: Right Hand Thumb Open
+    group: right_hand
+    id: 1
+  - name: Right Hand Close
+    group: right_hand
+    id: 2
+  - name: Left Hand Open
+    group: left_hand
+    id: 0
+  - name: Left Hand Thumb Open
+    group: left_hand
+    id: 1
+  - name: Left Hand Close
+    group: left_hand
+    id: 2
+  - name: Right Foot Open
+    group: right_foot
+    id: 0
+  - name: Right Foot Close
+    group: right_foot
+    id: 2
+  - name: Left Foot Open
+    group: left_foot
+    id: 0
+  - name: Left Foot Close
+    group: left_foot
+    id: 2

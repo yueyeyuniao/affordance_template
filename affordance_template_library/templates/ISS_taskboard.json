@@ -1,0 +1,350 @@
+{
+  "name": "ISS_Taskboard",
+  "image": "package://affordance_template_library/images/ISS_taskboard_button.jpg",
+  "display_objects": [
+    {
+      "name": "taskboard",
+      "shape": {
+        "type": "mesh",
+        "data": "package://affordance_template_library/models/taskboard.dae",
+        "size": [0.0254,0.0254,0.0254]
+      },
+      "origin" : {
+        "xyz": [0.5, 0.2, -0.1],
+        "rpy": [1.57, 0.0, -1.57]
+      },
+      "controls": {
+        "xyz": [true, true, true],
+        "rpy": [true, true, true],
+        "scale": 0.3
+      }
+    }
+  ],
+
+  "end_effector_trajectory": [
+  {
+      "name": "Left Hand A1",
+      "end_effector_group" : [
+        { 
+          "id": 0,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.06, -0.135, 0.3],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.09, -0.135, 0.207],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Left Hand A2",
+      "end_effector_group" : [
+        { 
+          "id": 0,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.085, -0.135, 0.3],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.115, -0.135, 0.207],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Left Hand A3",
+      "end_effector_group" : [
+        { 
+          "id": 0,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.11, -0.135, 0.3],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.14, -0.135, 0.207],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Left Hand B1",
+      "end_effector_group" : [
+        { 
+          "id": 0,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.06, -0.16, 0.3],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.09, -0.16, 0.207],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Left Hand B2",
+      "end_effector_group" : [
+        { 
+          "id": 0,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.085, -0.16, 0.3],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.115, -0.16, 0.207],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Left Hand B3",
+      "end_effector_group" : [
+        { 
+          "id": 0,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.11, -0.16, 0.3],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.14, -0.16, 0.207],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Left Hand C1",
+      "end_effector_group" : [
+        { 
+          "id": 0,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.06, -0.185, 0.3],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.09, -0.185, 0.207],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Left Hand C2",
+      "end_effector_group" : [
+        { 
+          "id": 0,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.085, -0.185, 0.3],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.115, -0.185, 0.207],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Left Hand C3",
+      "end_effector_group" : [
+        { 
+          "id": 0,
+          "end_effector_waypoint" : [
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.11, -0.185, 0.3],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 3,
+              "display_object": "taskboard",
+              "origin": {
+                "xyz": [0.14, -0.185, 0.207],
+                "rpy": [-1.57, 1.57, 0.0]
+              },
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+#goal
+string[] groups
+string trajectory
+int32 steps
+bool direct
+bool backwards
+bool execute
+---
+#result
+bool succeeded
+---
+#feedback
+int32 progress # should be increasing if progress being made, -1 otherwise 

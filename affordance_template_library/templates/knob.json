@@ -1,0 +1,549 @@
+{
+  "name": "Knob",
+  "image": "package://affordance_template_library/images/knob.png",
+  "display_objects": [
+    {
+      "name": "knob",
+      "shape": {
+        "type": "mesh",
+        "data": "package://affordance_template_library/models/knob.dae",
+        "size": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "origin": {
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rpy": [
+          -1.57,
+          0.0,
+          1.57
+        ]
+      },
+      "controls": {
+        "xyz": [
+          true,
+          true,
+          true
+        ],
+        "rpy": [
+          true,
+          true,
+          true
+        ],
+        "scale": 0.2
+      }
+    }
+  ],
+  "end_effector_trajectory": [
+    {
+      "name": "Left Hand Clockwise 90 Turn",
+      "end_effector_group": [
+        {
+          "id": 0,
+          "end_effector_waypoint": [
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  0.01621960662305355,
+                  -0.015422255732119084,
+                  0.11457740515470505
+                ],
+                "rpy": [
+                  3.008997430802041,
+                  1.4968798632814045,
+                  -0.026643739155824927
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  0.01651795208454132,
+                  -0.037048425525426868,
+                  0.04206531494855881
+                ],
+                "rpy": [
+                  -1.8178171019070438,
+                  1.176852898154349,
+                  1.439954138094396
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  -0.037838615477085116,
+                  -0.006490724161267281,
+                  0.042528990656137469
+                ],
+                "rpy": [
+                  -1.5041959800624887,
+                  1.2567074508366115,
+                  -0.34526923297279096
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  -0.03712660074234009,
+                  -0.0418144054710865,
+                  0.15169894695281986
+                ],
+                "rpy": [
+                  1.06543753476584,
+                  1.4522718682572245,
+                  -3.105215436197989
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Left Hand Counter-Clockwise 90 Turn",
+      "end_effector_group": [
+        {
+          "id": 0,
+          "end_effector_waypoint": [
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  0.011493435129523278,
+                  -0.015926597639918329,
+                  0.11422854661941529
+                ],
+                "rpy": [
+                  3.008997430802041,
+                  1.4968798632814045,
+                  -0.02664373915582493
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  0.018108610063791276,
+                  -0.03793550282716751,
+                  0.04479401931166649
+                ],
+                "rpy": [
+                  -1.817817101907044,
+                  1.176852898154349,
+                  1.439954138094396
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  0.02685891091823578,
+                  0.005576733034104109,
+                  0.05522946268320084
+                ],
+                "rpy": [
+                  -2.552290034714619,
+                  1.2478643368789817,
+                  2.233571675342063
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  0.011493435129523278,
+                  -0.015926597639918329,
+                  0.11422854661941529
+                ],
+                "rpy": [
+                  -2.552290034714619,
+                  1.2478643368789817,
+                  2.233571675342063
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Right Hand Counter-Clockwise 90 Turn",
+      "end_effector_group": [
+        {
+          "id": 1,
+          "end_effector_waypoint": [
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  -0.020198514685034753,
+                  -0.025489553809165956,
+                  0.13490720093250276
+                ],
+                "rpy": [
+                  0.5864433657489299,
+                  1.4825548260581248,
+                  0.677629247859842
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  -0.012239120900630953,
+                  -0.040483154356479648,
+                  0.05002754554152489
+                ],
+                "rpy": [
+                  1.7178428661553232,
+                  1.250617610597906,
+                  1.8390972549847465
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  0.03440667688846588,
+                  -0.025948721915483476,
+                  0.051848962903022769
+                ],
+                "rpy": [
+                  1.3484055760607992,
+                  1.2765910562418337,
+                  2.7959138191909349
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  0.04245790094137192,
+                  -0.0714954286813736,
+                  0.1746659874916077
+                ],
+                "rpy": [
+                  -1.2003010776122092,
+                  1.3353928120885837,
+                  -0.2410193487532359
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Right Hand Clockwise 90 Turn",
+      "end_effector_group": [
+        {
+          "id": 1,
+          "end_effector_waypoint": [
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  -0.020198514685034753,
+                  -0.025489553809165956,
+                  0.13490720093250276
+                ],
+                "rpy": [
+                  0.5864433657489299,
+                  1.4825548260581248,
+                  0.677629247859842
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  -0.012239120900630953,
+                  -0.040483154356479648,
+                  0.05002754554152489
+                ],
+                "rpy": [
+                  1.7178428661553232,
+                  1.250617610597906,
+                  1.8390972549847465
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  -0.03997357189655304,
+                  0.008548354730010033,
+                  0.05465284734964371
+                ],
+                "rpy": [
+                  2.358738869956045,
+                  1.2861887779441073,
+                  0.774064443244742
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            },
+            {
+              "ee_pose": 4,
+              "display_object": "knob",
+              "origin": {
+                "xyz": [
+                  -0.08649296313524246,
+                  -0.023888612166047097,
+                  0.23041217029094697
+                ],
+                "rpy": [
+                  -1.027182468582548,
+                  1.4052927176116122,
+                  -2.4804699315480209
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  true,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

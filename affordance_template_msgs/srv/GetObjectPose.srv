@@ -1,0 +1,11 @@
+# service call to get information about avialable template objects
+
+# if the client requests a particular object (blank will return all available) 
+string name
+
+string type
+uint8 id
+
+---
+
+ObjectInfo[] objects

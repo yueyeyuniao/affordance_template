@@ -1,0 +1,3 @@
+# service call to check if the server is up and operational
+---
+bool ready

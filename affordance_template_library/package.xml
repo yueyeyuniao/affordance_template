@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <name>affordance_template_library</name>
+  <version>0.0.0</version>
+  <description>The affordance_template_library package</description>
+
+  <maintainer email="swhart@traclabs.com">Stephen Hart</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>planner_interface</build_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>planner_interface</run_depend>
+
+</package>

@@ -1,0 +1,341 @@
+{
+  "name": "TestAT",
+  "image": "package://affordance_template_library/images/lizard.jpg",
+  "display_objects": [
+    {
+      "name": "wheel",
+      "shape": {
+        "type": "mesh",
+        "data": "package://affordance_template_library/models/torus.dae",
+        "size": [
+          0.2,
+          0.4,
+          0.3
+        ]
+      },
+      "origin": {
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rpy": [
+          0.0,
+          1.57,
+          0.0
+        ]
+      },
+      "controls": {
+        "xyz": [
+          true,
+          true,
+          true
+        ],
+        "rpy": [
+          true,
+          true,
+          true
+        ],
+        "scale": 0.15
+      }
+    }
+  ],
+  "end_effector_trajectory": [
+    {
+      "name": "Test Trajectory",
+      "end_effector_group": [
+        {
+          "id": 0,
+          "end_effector_waypoint": [
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [
+                  0.0,
+                  0.5090838670730591,
+                  1.30385160446167e-8
+                ],
+                "rpy": [
+                  0.0,
+                  -1.570000004233985,
+                  0.0
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  false,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              },
+              "tool_offset": {
+                "xyz": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "rpy": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "tolerances": {
+                "x": [
+                  0.01,
+                  -0.01
+                ],
+                "y": [
+                  0.01,
+                  -0.01
+                ],
+                "z": [
+                  0.01,
+                  -0.01
+                ],
+                "R": [
+                  0.0349,
+                  -0.0349
+                ],
+                "P": [
+                  0.0349,
+                  -0.0349
+                ],
+                "Y": [
+                  0.0349,
+                  -0.0349
+                ]
+              },
+              "conditioning_metric": "MIN_DISTANCE",
+              "planner_type": "CARTESIAN"
+            },
+            {
+              "ee_pose": 2,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [
+                  0.0,
+                  0.198,
+                  0.0
+                ],
+                "rpy": [
+                  0.0,
+                  -1.57,
+                  0.0
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  false,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              },
+              "tool_offset": {
+                "xyz": [
+                  0.0,
+                  -0.198,
+                  0.0
+                ],
+                "rpy": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "tolerances": {
+                "x": [
+                  0.01,
+                  -0.01
+                ],
+                "y": [
+                  0.01,
+                  -0.01
+                ],
+                "z": [
+                  0.01,
+                  -0.01
+                ],
+                "R": [
+                  0.0349,
+                  -0.0349
+                ],
+                "P": [
+                  0.0349,
+                  -0.0349
+                ],
+                "Y": [
+                  0.0349,
+                  -0.0349
+                ]
+              },
+              "conditioning_metric": "MIN_DISTANCE",
+              "planner_type": "CARTESIAN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Test Trajectory 2",
+      "end_effector_group": [
+        {
+          "id": 1,
+          "end_effector_waypoint": [
+            {
+              "ee_pose": 0,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [
+                  0.0,
+                  -0.3,
+                  0.0
+                ],
+                "rpy": [
+                  0.0,
+                  -1.57,
+                  0.0
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  false,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              },
+              "tool_offset": {
+                "xyz": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "rpy": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "tolerances": {
+                "x": [
+                  0.01,
+                  -0.01
+                ],
+                "y": [
+                  0.01,
+                  -0.01
+                ],
+                "z": [
+                  0.01,
+                  -0.01
+                ],
+                "R": [
+                  0.0349,
+                  -0.0349
+                ],
+                "P": [
+                  0.0349,
+                  -0.0349
+                ],
+                "Y": [
+                  0.0349,
+                  -0.0349
+                ]
+              },
+              "conditioning_metric": "MIN_DISTANCE",
+              "planner_type": "CARTESIAN"
+            },
+            {
+              "ee_pose": 2,
+              "display_object": "wheel",
+              "origin": {
+                "xyz": [
+                  0.0,
+                  -0.198,
+                  0.0
+                ],
+                "rpy": [
+                  0.0,
+                  -1.57,
+                  0.0
+                ]
+              },
+              "controls": {
+                "xyz": [
+                  true,
+                  true,
+                  true
+                ],
+                "rpy": [
+                  false,
+                  true,
+                  true
+                ],
+                "scale": 0.25
+              },
+              "tool_offset": {
+                "xyz": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "rpy": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "tolerances": {
+                "x": [
+                  0.01,
+                  -0.01
+                ],
+                "y": [
+                  0.01,
+                  -0.01
+                ],
+                "z": [
+                  0.01,
+                  -0.01
+                ],
+                "R": [
+                  0.0349,
+                  -0.0349
+                ],
+                "P": [
+                  0.0349,
+                  -0.0349
+                ],
+                "Y": [
+                  0.0349,
+                  -0.0349
+                ]
+              },
+              "conditioning_metric": "MIN_DISTANCE",
+              "planner_type": "CARTESIAN"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

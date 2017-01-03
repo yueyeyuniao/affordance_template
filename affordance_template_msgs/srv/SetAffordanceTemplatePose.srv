@@ -1,0 +1,15 @@
+# service call to set the current trajectory for a specified template
+
+# The affordance template type to delete 
+string class_type
+
+# the particular id
+uint8 id
+
+# an initial pose
+geometry_msgs/PoseStamped pose
+
+---
+
+# return value
+bool success

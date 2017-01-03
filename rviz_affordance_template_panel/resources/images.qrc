@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>end.png</file>
+        <file>ffwd.png</file>
+        <file>left.png</file>
+        <file>pause.png</file>
+        <file>right.png</file>
+        <file>rwnd.png</file>
+        <file>start.png</file>
+        <file>sync.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,15 @@
+# service call to add an affordance template
+
+# The affordance template to add (by type) 
+string class_type
+
+# an initial pose
+geometry_msgs/PoseStamped pose
+
+---
+
+# status
+bool status
+
+# the id of the template of that that type that was added
+uint8 id

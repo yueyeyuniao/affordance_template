@@ -1,0 +1,9 @@
+<library path="lib/librviz_affordance_template_panel">
+  <class name="rviz_affordance_template_panel/RVizAffordanceTemplatePanel"
+         type="rviz_affordance_template_panel::RVizAffordanceTemplatePanel"
+         base_class_type="rviz::Panel">
+    <description>
+      An RViz panel widget for Affordance Template Command and Control.
+    </description>
+  </class>
+</library>

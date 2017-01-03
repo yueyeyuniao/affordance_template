@@ -1,0 +1,11 @@
+# service call to load a particular robot config setting in server
+
+# The robot config data structure 
+RobotConfig robot_config
+
+# a robot config filename
+string filename
+
+---
+# status
+bool status

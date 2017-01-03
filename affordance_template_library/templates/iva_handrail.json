@@ -1,0 +1,170 @@
+{
+  "name": "IVA_Handrail",
+  "image": "package://affordance_template_library/images/iva_handrail.jpg", 
+  "display_objects": [
+    {
+      "name": "handrail", 
+      "shape": {
+        "type": "mesh", 
+        "data": "package://affordance_template_library/models/r2_iva_hr.dae", 
+        "size": [0.0254, 0.0254, 0.0254]
+      },
+      "origin": {
+        "xyz": [0,0,0], 
+        "rpy": [1.57, -1.57, 0]
+      }, 
+      "controls": {
+        "xyz": [true, true, true],
+        "rpy": [true, true, true],
+        "scale": 0.3
+      }
+    }
+  ],  
+
+  "end_effector_trajectory": [
+    {
+      "name": "Single right leg approach",
+      "end_effector_group": [
+        {
+          "id": 3, 
+          "end_effector_waypoint": [
+            {
+              "ee_pose": 2, 
+              "display_object": "handrail",
+              "origin": {
+                "xyz": [-0.10, 0.5, 0],
+                "rpy": [3.14, 0, 0]                
+              }, 
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }, 
+            {
+              "ee_pose": 2, 
+              "display_object": "handrail",
+              "origin": {
+                "xyz": [-0.10, 0.115, 0],
+                "rpy": [3.14, 0, 0]                
+              }, 
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Single left leg approach",
+      "end_effector_group": [
+        {
+          "id": 2, 
+          "end_effector_waypoint": [
+            {
+              "ee_pose": 2, 
+              "display_object": "handrail",
+              "origin": {
+                "xyz": [-0.1, 0.4, 0],
+                "rpy": [-3.14, 0, -3.14]                
+              }, 
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }, 
+            {
+              "ee_pose": 2, 
+              "display_object": "handrail",
+              "origin": {
+                "xyz": [-0.10, 0.115, 0],
+                "rpy": [-3.14, 0, -3.14]                
+              }, 
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Single right hand approach",
+      "end_effector_group": [
+        {
+          "id": 1, 
+          "end_effector_waypoint": [
+            {
+              "ee_pose": 0, 
+              "display_object": "handrail",
+              "origin": {
+                "xyz": [-0.10, 0.5, 0],
+                "rpy": [3.14, 0, 0]                
+              }, 
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }, 
+            {
+              "ee_pose": 0, 
+              "display_object": "handrail",
+              "origin": {
+                "xyz": [-0.10, 0.115, 0],
+                "rpy": [3.14, 0, 0]                
+              }, 
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Single left hand approach",
+      "end_effector_group": [
+        {
+          "id": 0, 
+          "end_effector_waypoint": [
+            {
+              "ee_pose": 0, 
+              "display_object": "handrail",
+              "origin": {
+                "xyz": [-0.1, 0.4, 0],
+                "rpy": [-3.14, 0, -3.14]                
+              }, 
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }, 
+            {
+              "ee_pose": 0, 
+              "display_object": "handrail",
+              "origin": {
+                "xyz": [-0.10, 0.115, 0],
+                "rpy": [-3.14, 0, -3.14]                
+              }, 
+              "controls": {
+                "xyz": [true, true, true],
+                "rpy": [true, true, true],
+                "scale": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

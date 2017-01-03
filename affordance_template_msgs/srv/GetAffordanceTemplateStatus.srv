@@ -1,0 +1,21 @@
+# service call to get information about avialable from affordance templates from the server
+
+# if the client requests a particular template 
+string name
+
+# if the client requests a particular trajectory (blank will return only the current set traj's info)
+string trajectory_name
+
+# if the client requests that the trajectory be transformed to a different frame
+string frame_id
+
+---
+
+# template status to be returned
+AffordanceTemplateStatus[] affordance_template_status 
+
+# current set trajectory on the server for this template
+string current_trajectory
+
+# trajectory names
+string[] trajectory_names

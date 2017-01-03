@@ -1,0 +1,8 @@
+# service call to get information about avialable from robots from the server
+
+# if the client requests a particular robot (blank will return all available) 
+string name
+---
+# robot data to be returned
+RobotConfig[] robots
+

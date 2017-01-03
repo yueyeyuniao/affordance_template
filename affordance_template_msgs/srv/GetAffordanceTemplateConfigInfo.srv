@@ -1,0 +1,8 @@
+# service call to get information about avialable from affordance templates from the server
+
+# if the client requests a particular template (blank will return all available) 
+string name
+---
+# template data to be returned
+AffordanceTemplateConfig[] templates
+

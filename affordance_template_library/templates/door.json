@@ -1,0 +1,423 @@
+{
+  "image": "package://affordance_template_library/images/door.jpg", 
+  "display_objects": [
+    {
+      "origin": {
+        "rpy": [
+          0.0, 
+          -0.0, 
+          0.0
+        ], 
+        "xyz": [
+          0.07074177265167236, 
+          0.30774736404418945, 
+          -0.009330123662948608
+        ]
+      }, 
+      "shape": {
+        "material": {
+          "color": "blue", 
+          "rgba": [
+            0.0, 
+            0.0, 
+            1.0, 
+            1.0
+          ]
+        }, 
+        "type": "box", 
+        "size": [
+          0.01, 
+          0.01, 
+          0.01
+        ]
+      }, 
+      "name": "im_control", 
+      "controls": {
+        "rpy": [
+          false, 
+          false, 
+          true
+        ], 
+        "xyz": [
+          true, 
+          true, 
+          true
+        ], 
+        "scale": 1.2
+      }
+    }, 
+    {
+      "origin": {
+        "rpy": [
+          0.0, 
+          -0.0, 
+          0.0
+        ], 
+        "xyz": [
+          0.0, 
+          0.0, 
+          -0.9818683862686157
+        ]
+      }, 
+      "shape": {
+        "type": "mesh", 
+        "data": "package://affordance_template_library/models/door_cut.stl", 
+        "size": [
+          1.0, 
+          1.0, 
+          1.0
+        ]
+      }, 
+      "parent": "im_control", 
+      "name": "door_closed", 
+      "controls": {
+        "rpy": [
+          false, 
+          false, 
+          false
+        ], 
+        "xyz": [
+          false, 
+          false, 
+          false
+        ], 
+        "scale": 0.5
+      }
+    }, 
+    {
+      "origin": {
+        "rpy": [
+          0.0, 
+          -0.0, 
+          0.0
+        ], 
+        "xyz": [
+          0.0, 
+          0.3972, 
+          0.98186838472
+        ]
+      }, 
+      "shape": {
+        "type": "mesh", 
+        "data": "package://affordance_template_library/models/lever_handle.dae", 
+        "size": [
+          1, 
+          1, 
+          1
+        ]
+      }, 
+      "parent": "door_closed", 
+      "name": "handle_closed", 
+      "controls": {
+        "rpy": [
+          false, 
+          false, 
+          false
+        ], 
+        "xyz": [
+          false, 
+          false, 
+          false
+        ], 
+        "scale": 0.3
+      }
+    }, 
+    {
+      "origin": {
+        "rpy": [
+          0.0, 
+          0.0, 
+          -0.7849999952530043
+        ], 
+        "xyz": [
+          0.32328900694847107, 
+          -0.14499999582767487, 
+          -0.9818683862686157
+        ]
+      }, 
+      "shape": {
+        "type": "mesh", 
+        "data": "package://affordance_template_library/models/door_cut.stl", 
+        "size": [
+          1.0, 
+          1.0, 
+          1.0
+        ]
+      }, 
+      "parent": "im_control", 
+      "name": "door_half", 
+      "controls": {
+        "rpy": [
+          false, 
+          false, 
+          false
+        ], 
+        "xyz": [
+          false, 
+          false, 
+          false
+        ], 
+        "scale": 0.5
+      }
+    }, 
+    {
+      "origin": {
+        "rpy": [
+          0.0, 
+          -0.0, 
+          0.0
+        ], 
+        "xyz": [
+          0.0, 
+          0.3972, 
+          0.98186838472
+        ]
+      }, 
+      "shape": {
+        "type": "mesh", 
+        "data": "package://affordance_template_library/models/lever_handle.dae", 
+        "size": [
+          1, 
+          1, 
+          1
+        ]
+      }, 
+      "parent": "door_half", 
+      "name": "handle_half", 
+      "controls": {
+        "rpy": [
+          false, 
+          false, 
+          false
+        ], 
+        "xyz": [
+          false, 
+          false, 
+          false
+        ], 
+        "scale": 0.3
+      }
+    }, 
+    {
+      "origin": {
+        "rpy": [
+          0.0, 
+          -0.0, 
+          0.0
+        ], 
+        "xyz": [
+          1.25, 
+          0.0, 
+          -1.04
+        ]
+      }, 
+      "shape": {
+        "material": {
+          "color": "blue", 
+          "rgba": [
+            1.0, 
+            0.0, 
+            0.0, 
+            1.0
+          ]
+        }, 
+        "type": "box", 
+        "size": [
+          0.05, 
+          0.05, 
+          0.05
+        ]
+      }, 
+      "parent": "im_control", 
+      "name": "final_walk_goal", 
+      "controls": {
+        "rpy": [
+          true, 
+          true, 
+          true
+        ], 
+        "xyz": [
+          true, 
+          true, 
+          true
+        ], 
+        "scale": 0.3
+      }
+    },
+    {
+      "origin": {
+        "rpy": [
+          0.0, 
+          0.0, 
+          0.0
+        ], 
+        "xyz": [
+          -0.9, 
+          0.0, 
+          -1.04
+        ]
+      }, 
+      "shape": {
+        "material": {
+          "color": "blue", 
+          "rgba": [
+            0.0, 
+            1.0, 
+            0.0, 
+            1.0
+          ]
+        }, 
+        "type": "box", 
+        "size": [
+          0.05, 
+          0.05, 
+          0.05
+        ]
+      }, 
+      "parent": "im_control", 
+      "name": "pre_walk_goal", 
+      "controls": {
+        "rpy": [
+          true, 
+          true, 
+          true
+        ], 
+        "xyz": [
+          true, 
+          true, 
+          true
+        ], 
+        "scale": 0.3
+      }
+    }
+  ], 
+  "name": "Door", 
+  "end_effector_trajectory": [
+    {
+      "end_effector_group": [
+        {
+          "id": 0, 
+          "end_effector_waypoint": [
+            {
+              "origin": {
+                "rpy": [
+                  -3.0620548457444396, 
+                  1.560775362450111, 
+                  -1.4920587213506136
+                ], 
+                "xyz": [
+                  -0.300044983625412, 
+                  -0.0641462504863739, 
+                  0.16736939549446106
+                ]
+              }, 
+              "ee_pose": 0, 
+              "controls": {
+                "rpy": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "xyz": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "scale": 0.25
+              }, 
+              "display_object": "handle_closed"
+            }, 
+            {
+              "origin": {
+                "rpy": [
+                  -1.5700239162494896, 
+                  1.5700000086714696, 
+                  -2.3907585336101427e-05
+                ], 
+                "xyz": [
+                  -0.100042425096035, 
+                  -0.07500000298023224, 
+                  0.1532725691795349
+                ]
+              }, 
+              "ee_pose": 0, 
+              "controls": {
+                "rpy": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "xyz": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "scale": 0.25
+              }, 
+              "display_object": "handle_closed"
+            }, 
+            {
+              "origin": {
+                "rpy": [
+                  -1.5700239162494896, 
+                  1.5700000086714696, 
+                  -2.3907585336101427e-05
+                ], 
+                "xyz": [
+                  -0.08447802066802979, 
+                  -0.0499924011528492, 
+                  0.03268205374479294
+                ]
+              }, 
+              "ee_pose": 0, 
+              "controls": {
+                "rpy": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "xyz": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "scale": 0.25
+              }, 
+              "display_object": "handle_closed"
+            }, 
+            {
+              "origin": {
+                "rpy": [
+                  -0.44287403268319697, 
+                  1.5700000335984703, 
+                  7.613851239130606e-06
+                ], 
+                "xyz": [
+                  0.3581658601760864, 
+                  -0.5577454566955566, 
+                  0.13309042155742645
+                ]
+              }, 
+              "ee_pose": 0, 
+              "controls": {
+                "rpy": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "xyz": [
+                  true, 
+                  true, 
+                  true
+                ], 
+                "scale": 0.25
+              }, 
+              "display_object": "handle_closed"
+            }
+          ]
+        }
+      ], 
+      "name": "Atlas Pogo Open"
+    }
+  ]
+}

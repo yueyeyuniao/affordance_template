@@ -1,0 +1,9 @@
+# service call to set the display view of a waypoint
+
+string[] waypoint_names
+
+bool[] compact_view
+
+---
+
+bool status

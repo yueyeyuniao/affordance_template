@@ -1,0 +1,24 @@
+# service call to save the current settings of a tempalte back to disk as a json file
+
+# the original template class type 
+string original_class_type
+
+# the new template class type 
+string new_class_type
+
+# the id of the template running whose current settings are to be saved
+uint8 id
+
+# the filename to be saved as
+string filename 
+
+# the image/icon to be displayed for template
+string image
+
+# save scaling updates
+bool save_scale_updates
+
+---
+# return status
+bool status
+

@@ -1,0 +1,43 @@
+robot_name: atlas
+planner_type: moveit_planner::MoveItPlanner
+config_package: atlas_moveit_config
+config_file: config/atlas.srdf
+gripper_action:
+  - name: right_hand
+    action: /right_hand/gripper/server
+  # - name: left_hand
+  #   action: /left_hand/gripper/server
+frame_id: global
+root_offset: [0.0,0,1.04,0,0,0]
+end_effector_group_map:
+  - name: left_hand
+    id: 0
+    pose_offset: [0.1, 0.2, 0, 0, 1.57, 3.14]
+  - name: right_hand
+    id: 1
+    pose_offset: [0.1, -0.2, 0, 0, 1.57, 3.14]
+end_effector_pose_map:
+  - name: right_hand_position_open
+    group: right_hand
+    id: 0
+  - name: right_hand_position_thumb_open
+    group: right_hand
+    id: 1
+  - name: right_hand_position_close
+    group: right_hand
+    id: 2
+  - name: right_hand_position_point
+    group: right_hand
+    id: 3
+  - name: left_hand_position_open
+    group: left_hand
+    id: 0
+  - name: left_hand_position_thumb_open
+    group: left_hand
+    id: 1
+  - name: left_hand_position_close
+    group: left_hand
+    id: 2
+  - name: left_hand_position_point
+    group: left_hand
+    id: 3

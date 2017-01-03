@@ -1,0 +1,5 @@
+# service call to get running templates
+
+---
+
+string[] templates

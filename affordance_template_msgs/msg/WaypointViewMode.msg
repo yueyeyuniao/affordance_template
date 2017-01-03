@@ -1,0 +1,2 @@
+uint8 FULL=0
+uint8 COMPACT=1

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find rit_utils)/launch/robot_display.launch">
+    <arg name="prefix" value="ats"/>
+    <arg name="base_frame" value="base_link"/>
+  </include>
+
+  <node name="affordance_template_server" pkg="affordance_template_server" type="affordance_template_server_node" respawn="false" output="screen">
+    <param name="robot_config" value="fetch.yaml"/>
+    <param name="planner_plugin" value="moveit_planner::MoveItPlanner"/>
+    <param name="param/trajectory_scaler" value="0.75"/>
+    <param name="param/trajectory_density" value="1.0"/>
+  </node>
+</launch>
+
+
+

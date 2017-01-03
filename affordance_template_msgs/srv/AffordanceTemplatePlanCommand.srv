@@ -1,0 +1,33 @@
+# service call to plan trajectories for an affordance template
+
+# the template type
+string type
+
+# the template id
+uint8 id
+
+# the template trajectory
+string trajectory_name
+
+# which end effectors to plan
+string[] end_effectors
+
+# the number of steps to send each end_effector
+int8[] steps
+
+# go directly to the waypoint (if not adjacent)
+bool direct
+
+# go backwards in the plan
+bool backwards
+
+# execute on plan checkbox in rviz
+bool execute
+
+---
+
+# return status
+bool status
+
+# info to know what the state of everything is
+AffordanceTemplateStatus affordance_template_status 

@@ -1,0 +1,8 @@
+# service call to get information about avialable from recognition objects from the server
+
+# if the client requests a particular object (blank will return all available) 
+string name
+---
+# object data to be returned
+RecognitionObjectConfig[] recognition_objects
+

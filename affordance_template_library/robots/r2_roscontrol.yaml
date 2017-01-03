@@ -1,0 +1,52 @@
+robot_name: r2
+planner_type: moveit_planner::MoveItPlanner
+config_package: r2_moveit_config
+config_file: config/r2.srdf
+frame_id: r2/robot_base
+root_offset: [0.4,0,-0.2,3.14,0,0]
+end_effector_group_map:
+  - name: left_hand
+    id: 0
+    pose_offset: [0,0,0,1.57,0,0]
+    tool_offset: [-0.08,0,-.01,0,-0.2,0]
+  - name: right_hand
+    id: 1
+    pose_offset: [0,0,0,-1.57,0,0]
+    tool_offset: [-.08,0,-.01,0,-0.2,0]
+end_effector_pose_map:
+  - name: Right Hand Open
+    group: right_hand
+    id: 0
+  - name: Right Hand Thumb Open
+    group: right_hand
+    id: 1
+  - name: Right Hand Close
+    group: right_hand
+    id: 2
+  - name: Right Hand Point
+    group: right_hand
+    id: 3
+  - name: Right Hand Two Finger Prism
+    group: right_hand
+    id: 4
+  - name: Right Hand Tool Trigger Pull
+    group: right_hand
+    id: 5
+  - name: Left Hand Open
+    group: left_hand
+    id: 0
+  - name: Left Hand Thumb Open
+    group: left_hand
+    id: 1
+  - name: Left Hand Close
+    group: left_hand
+    id: 2
+  - name: Left Hand Point
+    group: left_hand
+    id: 3
+  - name: Left Hand Two Finger Prism
+    group: left_hand
+    id: 4
+  - name: Left Hand Tool Trigger Pull
+    group: left_hand
+    id: 5

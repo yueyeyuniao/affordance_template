@@ -1,0 +1,12 @@
+# service call to set the current trajectory for a specified template
+
+# if the client requests a particular template 
+string name
+
+# if the client requests a particular trajectory (blank will return only the current set traj's info)
+string trajectory
+
+---
+
+# return value
+bool success
