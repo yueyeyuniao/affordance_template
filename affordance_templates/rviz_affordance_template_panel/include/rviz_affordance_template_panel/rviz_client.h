@@ -125,9 +125,12 @@ namespace rviz_affordance_template_panel
         void updateRobotConfig(const QString& text);
         void updateEndEffectorGroupMap(const QString&);
         void updateObjectScale(int value);
+        void updateObjectScale_y(int value);
         void updateEndEffectorScaleAdjustment(int value);
         void selectScaleObject(const QString& object_name);
+        void selectScaleObject_y(const QString& object_name);
         void scaleSliderReleased();
+        void scaleSliderReleased_y();
         void controlStatusUpdate();
         void resetScale();      
         void enableConfigPanel(int state);
@@ -171,6 +174,7 @@ namespace rviz_affordance_template_panel
         void doCommand(Controls::CommandType command_type);
         void sendScaleInfo();
         void setupDisplayObjectSliders(TemplateInstanceID template_instance);
+        void setupDisplayObjectSliders_y(TemplateInstanceID template_instance);
         bool endEffectorInTrajectory(AffordanceTemplateStatusInfo::EndEffectorInfo ee_info);
 
         std::string createShortName(const std::string&);
@@ -238,6 +242,7 @@ namespace rviz_affordance_template_panel
         // template bookkeeping
         TemplateInstanceID selected_template;
         std::map<std::pair<TemplateInstanceID, std::string>, int> display_object_scale_map;
+        std::map<std::pair<TemplateInstanceID, std::string>, int> display_object_scale_map_y;
         std::map<std::pair<TemplateInstanceID, std::string>, int> end_effector_adjustment_map;
         std::map<std::string, AffordanceTemplateStatusInfo*> template_status_info; 
 

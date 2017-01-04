@@ -109,8 +109,8 @@ void RVizAffordanceTemplatePanel::setupWidgets() {
     // object scaling stuff
     QObject::connect(ui_->object_scale_slider, SIGNAL(valueChanged(int)), this, SLOT(updateObjectScale(int)));
     QObject::connect(ui_->object_scale_slider, SIGNAL(sliderReleased()), this, SLOT(scaleSliderReleased()));
-    QObject::connect(ui_->object_scale_slider_y, SIGNAL(valueChanged(int)), this, SLOT(updateObjectScale(int)));
-    QObject::connect(ui_->object_scale_slider_y, SIGNAL(sliderReleased()), this, SLOT(scaleSliderReleased()));
+    QObject::connect(ui_->object_scale_slider_y, SIGNAL(valueChanged(int)), this, SLOT(updateObjectScale_y(int)));
+    QObject::connect(ui_->object_scale_slider_y, SIGNAL(sliderReleased()), this, SLOT(scaleSliderReleased_y()));
     QObject::connect(ui_->object_scale_slider_z, SIGNAL(valueChanged(int)), this, SLOT(updateObjectScale(int)));
     QObject::connect(ui_->object_scale_slider_z, SIGNAL(sliderReleased()), this, SLOT(scaleSliderReleased()));
     QObject::connect(ui_->object_scale_slider_radius, SIGNAL(valueChanged(int)), this, SLOT(updateObjectScale(int)));

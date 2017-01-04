@@ -2089,7 +2089,7 @@
         </widget>
        </item>
        <item row="20" column="3">
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="object_scale_max_radius">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
            <horstretch>1</horstretch>
@@ -2131,7 +2131,7 @@
         </widget>
        </item>
        <item row="21" column="3">
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="object_scale_max_length">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
            <horstretch>1</horstretch>

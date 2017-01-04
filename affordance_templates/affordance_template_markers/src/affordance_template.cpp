@@ -569,13 +569,23 @@ bool AffordanceTemplate::createDisplayObject(affordance_template_object::Display
     ee_scale_factor_[obj.name] = 1.0;
     ROS_DEBUG("AffordanceTemplate::createDisplayObject() -- setting scale factor for %s to default 1.0", obj.name.c_str());
   } 
+  if(object_scale_factor_y_.find(obj.name) == std::end(object_scale_factor_y_)) {
+    object_scale_factor_y_[obj.name] = 1.0;
+    ee_scale_factor_[obj.name] = 1.0;
+    ROS_DEBUG("AffordanceTemplate::createDisplayObject() -- setting scale factor_y for %s to default 1.0", obj.name.c_str());
+  } 
+
 
   if(object_scale_factor_.find(obj.parent) == std::end(object_scale_factor_)) {
     object_scale_factor_[obj.parent] = 1.0;
     ee_scale_factor_[obj.parent] = 1.0;
     ROS_DEBUG("AffordanceTemplate::createDisplayObject() -- setting parent scale factor for %s to default 1.0", obj.parent.c_str());
   }
-
+  if(object_scale_factor_y_.find(obj.parent) == std::end(object_scale_factor_y_)) {
+    object_scale_factor_y_[obj.parent] = 1.0;
+    ee_scale_factor_[obj.parent] = 1.0;
+    ROS_DEBUG("AffordanceTemplate::createDisplayObject() -- setting parent scale factor_y for %s to default 1.0", obj.parent.c_str());
+  }
   // get the object origin pose 
   geometry_msgs::PoseStamped display_pose;
   display_pose.header.frame_id = obj_frame;
@@ -586,9 +596,11 @@ bool AffordanceTemplate::createDisplayObject(affordance_template_object::Display
     display_pose.pose.orientation.x,display_pose.pose.orientation.y,display_pose.pose.orientation.z,display_pose.pose.orientation.w);
 
   // scale the object location according to parent object scale
-  if(object_scale_factor_[obj.parent] != 1.0) {
+  if(object_scale_factor_[obj.parent] != 1.0 || object_scale_factor_y_[obj.parent] != 1.0) {
+
+    ROS_INFO("Scale the object location");
     display_pose.pose.position.x *= object_scale_factor_[obj.parent];
-    display_pose.pose.position.y *= object_scale_factor_[obj.parent];
+    display_pose.pose.position.y *= object_scale_factor_y_[obj.parent];
     display_pose.pose.position.z *= object_scale_factor_[obj.parent];
     ROS_DEBUG("AffordanceTemplate::createDisplayObject() -- scaled pose: (%.3f,%.3f,%.3f),(%.3f,%.3f,%.3f,%.3f)", 
       display_pose.pose.position.x,display_pose.pose.position.y,display_pose.pose.position.z,
@@ -612,7 +624,7 @@ bool AffordanceTemplate::createDisplayObject(affordance_template_object::Display
   int_marker.header.stamp = ros::Time(0);
   int_marker.name = obj.name;
   int_marker.description = obj.name;
-  int_marker.scale = obj.controls.scale*object_scale_factor_[obj.name];
+  int_marker.scale = obj.controls.scale*object_scale_factor_[obj.name]; //how to change this?
   int_marker.pose = frame_store_[obj.name].second.pose;
 
   // set up the object display and menus.  Will be a "clickable" hand in RViz.
@@ -654,24 +666,26 @@ bool AffordanceTemplate::createDisplayObjectMarker(affordance_template_object::D
 {
   marker.text = obj.name;
   marker.ns = obj.name;
-  ROS_DEBUG("AffordanceTemplate::createDisplayObjectMarker() -- obj=%s, scale=%.3f", obj.name.c_str(), object_scale_factor_[obj.name]);
+  ROS_DEBUG("AffordanceTemplate::createDisplayObjectMarker() -- obj=%s, scale_x=%.3f", obj.name.c_str(), object_scale_factor_[obj.name]);
+  ROS_INFO("AffordanceTemplate::createDisplayObjectMarker() -- obj=%s, scale_x=%.3f", obj.name.c_str(), object_scale_factor_[obj.name]);
+  ROS_INFO("AffordanceTemplate::createDisplayObjectMarker() -- obj=%s, scale_y=%.3f", obj.name.c_str(), object_scale_factor_y_[obj.name]);
   
   if(obj.shape.type == "mesh") {
     marker.type = visualization_msgs::Marker::MESH_RESOURCE;
     marker.mesh_resource = obj.shape.mesh;
     marker.scale.x = obj.shape.size[0]*object_scale_factor_[obj.name];
-    marker.scale.y = obj.shape.size[1]*object_scale_factor_[obj.name];
+    marker.scale.y = obj.shape.size[1]*object_scale_factor_y_[obj.name];
     marker.scale.z = obj.shape.size[2]*object_scale_factor_[obj.name];
     ROS_DEBUG("AffordanceTemplate::createDisplayObjectMarker() -- drawing Mesh for object %s : %s (scale=%.3f)", obj.name.c_str(), marker.mesh_resource.c_str(), object_scale_factor_[obj.name]);
   } else if(obj.shape.type == "box") {
     marker.type = visualization_msgs::Marker::CUBE;
     marker.scale.x = obj.shape.size[0]*object_scale_factor_[obj.name];
-    marker.scale.y = obj.shape.size[1]*object_scale_factor_[obj.name];
+    marker.scale.y = obj.shape.size[1]*object_scale_factor_y_[obj.name];
     marker.scale.z = obj.shape.size[2]*object_scale_factor_[obj.name];
   } else if(obj.shape.type == "sphere") {
     marker.type = visualization_msgs::Marker::SPHERE;
     marker.scale.x = obj.shape.size[0]*object_scale_factor_[obj.name];
-    marker.scale.y = obj.shape.size[1]*object_scale_factor_[obj.name];
+    marker.scale.y = obj.shape.size[1]*object_scale_factor_y_[obj.name];
     marker.scale.z = obj.shape.size[2]*object_scale_factor_[obj.name];
   } else if(obj.shape.type == "cylinder") {
     marker.type = visualization_msgs::Marker::CYLINDER;
@@ -2678,10 +2692,11 @@ void AffordanceTemplate::stop()
   removeAllMarkers();
 }
 
-bool AffordanceTemplate::setObjectScaling(const std::string& key, double scale_factor, double ee_scale_factor)
+bool AffordanceTemplate::setObjectScaling(const std::string& key, double scale_factor, double scale_factor_y, double ee_scale_factor)
 { 
   ROS_DEBUG("[AffordanceTemplate::setObjectScaling] setting object %s scaling to %g, %g", key.c_str(), scale_factor, ee_scale_factor);
   object_scale_factor_[key] = scale_factor;
+  object_scale_factor_y_[key] = scale_factor_y;
   ee_scale_factor_[key] = ee_scale_factor;
   removeInteractiveMarker(key);
   return buildTemplate();

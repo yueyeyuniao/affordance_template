@@ -722,6 +722,24 @@ void AffordanceTemplateRVizClient::selectScaleObject(const QString& object_name)
   ui_->end_effector_adjustment_slider->setSliderPosition(end_effector_adjustment_map[object_info]); */
 }
 
+void AffordanceTemplateRVizClient::selectScaleObject_y(const QString& object_name) {
+  int v;
+  std::pair<TemplateInstanceID, std::string> object_info = make_pair(selected_template, object_name.toStdString());
+
+  if ( display_object_scale_map_y.find(object_info) == display_object_scale_map_y.end() ) {
+    v = ui_->object_scale_slider_y->minimum() + (ui_->object_scale_slider_y->maximum() - ui_->object_scale_slider_y->minimum()) / 2;
+    display_object_scale_map_y[object_info] = v;
+  }
+  ui_->object_scale_slider_y->setSliderPosition(display_object_scale_map_y[object_info]);
+  
+/*  if ( end_effector_adjustment_map.find(object_info) == end_effector_adjustment_map.end() ) {
+    v = ui_->end_effector_adjustment_slider->minimum() + (ui_->end_effector_adjustment_slider->maximum() - ui_->end_effector_adjustment_slider->minimum()) / 2;
+    end_effector_adjustment_map[object_info] = v;   
+  }
+  ui_->end_effector_adjustment_slider->setSliderPosition(end_effector_adjustment_map[object_info]); */
+}
+
+
 void AffordanceTemplateRVizClient::setupDisplayObjectSliders(TemplateInstanceID template_instance) {
   QList<QGraphicsItem*> list = affordanceTemplateGraphicsScene_->items();
   ui_->object_scale_combo_box->clear();
@@ -736,6 +754,20 @@ void AffordanceTemplateRVizClient::setupDisplayObjectSliders(TemplateInstanceID 
   }
 }
 
+void AffordanceTemplateRVizClient::setupDisplayObjectSliders_y(TemplateInstanceID template_instance) {
+  QList<QGraphicsItem*> list = affordanceTemplateGraphicsScene_->items();
+  ui_->object_scale_combo_box->clear();
+  for (int i=0; i < list.size(); ++i) {
+    string class_name = list.at(i)->data(CLASS_INDEX).toString().toStdString();
+    if(class_name==template_instance.first) {
+      for (auto& c: list.at(i)->data(DISPLAY_OBJECTS).toStringList()) {
+        ui_->object_scale_combo_box->addItem(QString(c.toStdString().c_str()));       
+        selectScaleObject_y(c);
+      }
+    }
+  }
+}
+
 void AffordanceTemplateRVizClient::updateObjectScale(int value) {
   string current_scale_object = ui_->object_scale_combo_box->currentText().toStdString();
   std::pair<TemplateInstanceID, std::string> object_info = make_pair(selected_template, current_scale_object);
@@ -744,6 +776,16 @@ void AffordanceTemplateRVizClient::updateObjectScale(int value) {
     sendScaleInfo();
 //  }
 }
+
+void AffordanceTemplateRVizClient::updateObjectScale_y(int value) {
+  string current_scale_object = ui_->object_scale_combo_box->currentText().toStdString();
+  std::pair<TemplateInstanceID, std::string> object_info = make_pair(selected_template, current_scale_object);
+  display_object_scale_map_y[object_info] = value;
+//  if(ui_->stream_scale_check_box->isChecked()) {
+    sendScaleInfo();
+//  }
+}
+
 
 void AffordanceTemplateRVizClient::updateEndEffectorScaleAdjustment(int value) {
   string current_scale_object = ui_->object_scale_combo_box->currentText().toStdString();
@@ -762,6 +804,14 @@ void AffordanceTemplateRVizClient::scaleSliderReleased() {
   sendScaleInfo();
 }
 
+void AffordanceTemplateRVizClient::scaleSliderReleased_y() {
+  string current_scale_object = ui_->object_scale_combo_box->currentText().toStdString();
+  std::pair<TemplateInstanceID, std::string> object_info = make_pair(selected_template, current_scale_object);
+  display_object_scale_map[object_info] = ui_->object_scale_slider_y->value();  
+//  end_effector_adjustment_map[object_info] = ui_->end_effector_adjustment_slider->value();
+  sendScaleInfo();
+}
+
 void AffordanceTemplateRVizClient::sendScaleInfo() 
 {
   string current_template_class = selected_template.first;
@@ -776,13 +826,19 @@ void AffordanceTemplateRVizClient::sendScaleInfo()
   std::pair<TemplateInstanceID, std::string> object_info = make_pair(selected_template, current_scale_object);
   
   int obj_scale = display_object_scale_map[object_info];
+  int obj_scale_y = display_object_scale_map_y[object_info];
   int ee_scale = end_effector_adjustment_map[object_info];
 
   double min_value = atof(ui_->object_scale_min->text().toStdString().c_str());
   double max_value = atof(ui_->object_scale_max->text().toStdString().c_str());
   double range = max_value - min_value;
 
+  double min_value_y = atof(ui_->object_scale_min_y->text().toStdString().c_str());
+  double max_value_y = atof(ui_->object_scale_max_y->text().toStdString().c_str());
+  double range_y = max_value_y - min_value_y;
+
   double obj_scale_value = range*double(obj_scale)/100.0 + min_value;
+  double obj_scale_value_y = range_y*double(obj_scale_y)/100.0 + min_value_y;
   double ee_adj_value = (range/2.0)*double(ee_scale)/100.0 + (min_value+range/4.0);
 
   affordance_template_msgs::ScaleDisplayObjectInfo msg;
@@ -790,6 +846,7 @@ void AffordanceTemplateRVizClient::sendScaleInfo()
   msg.id = current_template_id;
   msg.object_name = current_scale_object;
   msg.scale_factor = obj_scale_value;
+  msg.scale_factor_y = obj_scale_value_y;
   msg.end_effector_scale_factor = ee_adj_value;
   
   ROS_DEBUG("sending scale to template[%s:%d].%s  with scales(%2.2f,%2.2f) " , current_template_class.c_str(), current_template_id, current_scale_object.c_str(), obj_scale_value, ee_adj_value);

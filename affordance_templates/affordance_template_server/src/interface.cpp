@@ -366,7 +366,7 @@ bool AffordanceTemplateInterface::handleObjectScale(ScaleDisplayObject::Request 
 
   ATPointer at;
   if (at_server_->getTemplateInstance(req.scale_info.class_type, req.scale_info.id, at))
-    res.status = at->setObjectScaling(req.scale_info.object_name, req.scale_info.scale_factor, req.scale_info.end_effector_scale_factor);
+    res.status = at->setObjectScaling(req.scale_info.object_name, req.scale_info.scale_factor, req.scale_info.scale_factor_y, req.scale_info.end_effector_scale_factor);
 
   if (!res.status)
     ROS_ERROR("[AffordanceTemplateInterface::handleObjectScale] error scaling object!!");
@@ -570,8 +570,9 @@ void AffordanceTemplateInterface::handleObjectScaleCallback(const ScaleDisplayOb
 
   ATPointer at;
   if (at_server_->getTemplateInstance(data.class_type, data.id, at))
-    if (!at->setObjectScaling(key, data.scale_factor, data.end_effector_scale_factor))
+    if (!at->setObjectScaling(key, data.scale_factor, data.scale_factor_y, data.end_effector_scale_factor))
       ROS_ERROR("[AffordanceTemplateInterface::handleObjectScaleCallback] error trying to scale object!!");
+      ROS_INFO("[handleObjectScaleCallback] scale_factor_y=%.3f", data.scale_factor_y);
 }
 
 AffordanceTemplateStatus AffordanceTemplateInterface::getTemplateStatus(const std::string& type, const int id, std::string& trajectory, const std::string& frame_id)

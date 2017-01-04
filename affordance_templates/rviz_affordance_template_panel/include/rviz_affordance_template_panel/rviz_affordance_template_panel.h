@@ -114,8 +114,14 @@ namespace rviz_affordance_template_panel
         inline void updateObjectScale(int d) {
             client_->updateObjectScale(d);
         }
+        inline void updateObjectScale_y(int d) {
+            client_->updateObjectScale_y(d);
+        }
         inline void scaleSliderReleased() {
             client_->scaleSliderReleased();
+        }
+        inline void scaleSliderReleased_y() {
+            client_->scaleSliderReleased_y();
         }
         inline void updateEndEffectorScaleAdjustment(int d) {
             client_->updateEndEffectorScaleAdjustment(d);

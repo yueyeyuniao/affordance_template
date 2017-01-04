@@ -144,7 +144,7 @@ namespace affordance_template
     // public setters 
     bool switchTrajectory(const std::string&);
     bool setTrajectory(const std::string&);
-    bool setObjectScaling(const std::string&, double, double);
+    bool setObjectScaling(const std::string&, double, double, double);
     void setRobotInterface(boost::shared_ptr<affordance_template_markers::RobotInterface> robot_interface);
     bool setObjectPose(const affordance_template_msgs::DisplayObjectInfo&);
     bool setWaypointViewMode(int ee, int wp, bool m);
@@ -212,6 +212,7 @@ namespace affordance_template
     std::string current_trajectory_;
 
     std::map<std::string, double> object_scale_factor_;
+    std::map<std::string, double> object_scale_factor_y_;
     std::map<std::string, double> ee_scale_factor_;
 
     std::map<std::string, WaypointTrajectoryFlags> waypoint_flags_;
