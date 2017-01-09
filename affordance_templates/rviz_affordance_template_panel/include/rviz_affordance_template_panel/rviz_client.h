@@ -132,6 +132,7 @@ namespace rviz_affordance_template_panel
         void controlStatusUpdate();
         void updateEndEffectorScaleAdjustment(int value);
         void selectScaleObject(const QString& object_name);
+        void selectScaleSliders(const QString& object_name);
         //void selectScaleObject_y(const QString& object_name);
         void scaleSliderReleased();
         void scaleSliderReleased_y();

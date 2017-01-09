@@ -107,6 +107,9 @@ void RVizAffordanceTemplatePanel::setupWidgets() {
     QObject::connect(ui_->ee_ry, SIGNAL(textEdited(const QString&)), this, SLOT(updateEndEffectorGroupMap(const QString&)));
 
     // object scaling stuff
+
+
+
     QObject::connect(ui_->object_scale_slider, SIGNAL(valueChanged(int)), this, SLOT(updateObjectScale(int)));
     QObject::connect(ui_->object_scale_slider, SIGNAL(sliderReleased()), this, SLOT(scaleSliderReleased()));
     QObject::connect(ui_->object_scale_slider_y, SIGNAL(valueChanged(int)), this, SLOT(updateObjectScale_y(int)));
@@ -117,10 +120,13 @@ void RVizAffordanceTemplatePanel::setupWidgets() {
     QObject::connect(ui_->object_scale_slider_radius, SIGNAL(sliderReleased()), this, SLOT(scaleSliderReleased_radius()));
     QObject::connect(ui_->object_scale_slider_length, SIGNAL(valueChanged(int)), this, SLOT(updateObjectScale_length(int)));
     QObject::connect(ui_->object_scale_slider_length, SIGNAL(sliderReleased()), this, SLOT(scaleSliderReleased_length()));
+
+                     
+
    // QObject::connect(ui_->end_effector_adjustment_slider, SIGNAL(sliderReleased()), this, SLOT(scaleSliderReleased()));
  //   QObject::connect(ui_->end_effector_adjustment_slider, SIGNAL(valueChanged(int)), this, SLOT(updateEndEffectorScaleAdjustment(int)));
  //   QObject::connect(ui_->reset_scale_button, SIGNAL(clicked()), this, SLOT(resetScale()));
-    // QObject::connect(ui_->object_scale_combo_box, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(selectScaleObject(const QString&)));
+   QObject::connect(ui_->object_scale_combo_box, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(selectScaleObject(const QString& object_name)));
 }
 
 #include <pluginlib/class_list_macros.h>

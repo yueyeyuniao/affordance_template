@@ -152,6 +152,9 @@ namespace rviz_affordance_template_panel
         inline void selectScaleObject(const QString& s) {
             client_->selectScaleObject(s);
         }
+//        inline void selectScaleSliders(const QString& s) {
+//            client_->selectScaleSliders(s);
+//        }
         inline void selectTemplateTrajectory(const QString& s) {
             client_->selectTemplateTrajectory(s);
         }             

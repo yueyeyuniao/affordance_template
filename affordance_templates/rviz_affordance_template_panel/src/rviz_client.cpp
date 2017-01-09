@@ -705,7 +705,29 @@ void AffordanceTemplateRVizClient::selectAffordanceTemplate(QListWidgetItem* ite
   setupDisplayObjectSliders(selected_template);
 }
 
+
 void AffordanceTemplateRVizClient::selectScaleObject(const QString& object_name) {
+  if (ui_->object_scale_combo_box->currentText().toStdString() == "cylinder") {
+              ui_->object_scale_slider->setEnabled(false);
+              ui_->object_scale_slider_y->setEnabled(false);
+              ui_->object_scale_slider_z->setEnabled(false);
+              ui_->object_scale_slider_radius->setEnabled(true);
+              ui_->object_scale_slider_length->setEnabled(true);
+             }
+            else if (ui_->object_scale_combo_box->currentText().toStdString() == "sphere") {
+              ui_->object_scale_slider->setEnabled(false);
+              ui_->object_scale_slider_y->setEnabled(false);
+              ui_->object_scale_slider_z->setEnabled(false);
+              ui_->object_scale_slider_radius->setEnabled(true);
+              ui_->object_scale_slider_length->setEnabled(false);
+             }
+            else { 
+              ui_->object_scale_slider->setEnabled(true);
+              ui_->object_scale_slider_y->setEnabled(true);
+              ui_->object_scale_slider_z->setEnabled(true);
+              ui_->object_scale_slider_radius->setEnabled(false);
+              ui_->object_scale_slider_length->setEnabled(false); 
+             }  
   int v;
   std::pair<TemplateInstanceID, std::string> object_info = make_pair(selected_template, object_name.toStdString());
 
@@ -715,6 +737,7 @@ void AffordanceTemplateRVizClient::selectScaleObject(const QString& object_name)
   }
   ui_->object_scale_slider->setSliderPosition(display_object_scale_map[object_info]);
 }
+
 
 
 void AffordanceTemplateRVizClient::setupDisplayObjectSliders(TemplateInstanceID template_instance) {

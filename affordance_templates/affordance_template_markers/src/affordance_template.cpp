@@ -677,9 +677,9 @@ if(obj.shape.type == "mesh") {
       marker.scale.z = obj.shape.size[2]*scale[2];
     } else if(obj.shape.type == "sphere") {
       marker.type = visualization_msgs::Marker::SPHERE;
-      marker.scale.x = obj.shape.size[0]*scale[0];
-      marker.scale.y = obj.shape.size[1]*scale[1];
-      marker.scale.z = obj.shape.size[2]*scale[2];
+      marker.scale.x = obj.shape.size[0]*scale[3];
+      marker.scale.y = obj.shape.size[1]*scale[3];
+      marker.scale.z = obj.shape.size[2]*scale[3];
     } else if(obj.shape.type == "cylinder") {
       marker.type = visualization_msgs::Marker::CYLINDER;
       marker.scale.x = obj.shape.radius*scale[3];
@@ -719,9 +719,9 @@ if(obj.shape.type == "mesh") {
               marker.scale.z = obj.shape.size[2]*scale[2];
             } else if(obj.shape.type == "sphere") {
               marker.type = visualization_msgs::Marker::SPHERE;
-              marker.scale.x = obj.shape.size[0]*scale[0];
-              marker.scale.y = obj.shape.size[1]*scale[1];
-              marker.scale.z = obj.shape.size[2]*scale[2];
+              marker.scale.x = obj.shape.size[0]*scale[3];
+              marker.scale.y = obj.shape.size[1]*scale[3];
+              marker.scale.z = obj.shape.size[2]*scale[3];
             } else if(obj.shape.type == "cylinder") {
               marker.type = visualization_msgs::Marker::CYLINDER;
               marker.scale.x = obj.shape.radius*scale[3];
@@ -759,9 +759,9 @@ if(obj.shape.type == "mesh") {
               marker.scale.z = obj.shape.size[2]*scale[2];
             } else if(obj.shape.type == "sphere") {
               marker.type = visualization_msgs::Marker::SPHERE;
-              marker.scale.x = obj.shape.size[0]*scale[0];
-              marker.scale.y = obj.shape.size[1]*scale[1];
-              marker.scale.z = obj.shape.size[2]*scale[2];
+              marker.scale.x = obj.shape.size[0]*scale[3];
+              marker.scale.y = obj.shape.size[1]*scale[3];
+              marker.scale.z = obj.shape.size[2]*scale[3];
             } else if(obj.shape.type == "cylinder") {
               marker.type = visualization_msgs::Marker::CYLINDER;
               marker.scale.x = obj.shape.radius*scale[3];
@@ -799,9 +799,9 @@ if(obj.shape.type == "mesh") {
               marker.scale.z = obj.shape.size[2]*scale[2];
             } else if(obj.shape.type == "sphere") {
               marker.type = visualization_msgs::Marker::SPHERE;
-              marker.scale.x = obj.shape.size[0]*scale[0];
-              marker.scale.y = obj.shape.size[1]*scale[1];
-              marker.scale.z = obj.shape.size[2]*scale[2];
+              marker.scale.x = obj.shape.size[0]*scale[3];
+              marker.scale.y = obj.shape.size[1]*scale[3];
+              marker.scale.z = obj.shape.size[2]*scale[3];
             } else if(obj.shape.type == "cylinder") {
               marker.type = visualization_msgs::Marker::CYLINDER;
               marker.scale.x = obj.shape.radius*scale[3];
@@ -839,9 +839,9 @@ if(obj.shape.type == "mesh") {
               marker.scale.z = obj.shape.size[2]*scale[2];
             } else if(obj.shape.type == "sphere") {
               marker.type = visualization_msgs::Marker::SPHERE;
-              marker.scale.x = obj.shape.size[0]*scale[0];
-              marker.scale.y = obj.shape.size[1]*scale[1];
-              marker.scale.z = obj.shape.size[2]*scale[2];
+              marker.scale.x = obj.shape.size[0]*scale[3];
+              marker.scale.y = obj.shape.size[1]*scale[3];
+              marker.scale.z = obj.shape.size[2]*scale[3];
             } else if(obj.shape.type == "cylinder") {
               marker.type = visualization_msgs::Marker::CYLINDER;
               marker.scale.x = obj.shape.radius*scale[3];
@@ -879,9 +879,9 @@ if(obj.shape.type == "mesh") {
               marker.scale.z = obj.shape.size[2]*scale[2];
             } else if(obj.shape.type == "sphere") {
               marker.type = visualization_msgs::Marker::SPHERE;
-              marker.scale.x = obj.shape.size[0]*scale[0];
-              marker.scale.y = obj.shape.size[1]*scale[1];
-              marker.scale.z = obj.shape.size[2]*scale[2];
+              marker.scale.x = obj.shape.size[0]*scale[3];
+              marker.scale.y = obj.shape.size[1]*scale[3];
+              marker.scale.z = obj.shape.size[2]*scale[3];
             } else if(obj.shape.type == "cylinder") {
               marker.type = visualization_msgs::Marker::CYLINDER;
               marker.scale.x = obj.shape.radius*scale[3];
