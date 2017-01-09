@@ -117,18 +117,38 @@ namespace rviz_affordance_template_panel
         inline void updateObjectScale_y(int d) {
             client_->updateObjectScale_y(d);
         }
+        inline void updateObjectScale_z(int d) {
+            client_->updateObjectScale_z(d);
+        }
+        inline void updateObjectScale_radius(int d) {
+            client_->updateObjectScale_radius(d);
+        }
+        inline void updateObjectScale_length(int d) {
+            client_->updateObjectScale_length(d);
+        }
         inline void scaleSliderReleased() {
             client_->scaleSliderReleased();
         }
         inline void scaleSliderReleased_y() {
             client_->scaleSliderReleased_y();
         }
+        inline void scaleSliderReleased_z() {
+            client_->scaleSliderReleased_z();
+        }
+        inline void scaleSliderReleased_radius() {
+            client_->scaleSliderReleased_radius();
+        }
+        inline void scaleSliderReleased_length() {
+            client_->scaleSliderReleased_length();
+        }
+
         inline void updateEndEffectorScaleAdjustment(int d) {
             client_->updateEndEffectorScaleAdjustment(d);
         }
         inline void resetScale() {
             client_->resetScale();
         }
+        
         inline void selectScaleObject(const QString& s) {
             client_->selectScaleObject(s);
         }

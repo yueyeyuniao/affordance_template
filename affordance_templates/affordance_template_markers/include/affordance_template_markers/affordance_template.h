@@ -66,6 +66,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <affordance_template_msgs/DisplayObjectInfo.h>
 #include <affordance_template_msgs/WaypointViewMode.h>
 
+#include <iostream>
+#include <vector> 
 
 namespace affordance_template 
 {
@@ -144,7 +146,7 @@ namespace affordance_template
     // public setters 
     bool switchTrajectory(const std::string&);
     bool setTrajectory(const std::string&);
-    bool setObjectScaling(const std::string&, double, double, double);
+    bool setObjectScaling(const std::string&, double, int, double);
     void setRobotInterface(boost::shared_ptr<affordance_template_markers::RobotInterface> robot_interface);
     bool setObjectPose(const affordance_template_msgs::DisplayObjectInfo&);
     bool setWaypointViewMode(int ee, int wp, bool m);
@@ -157,6 +159,9 @@ namespace affordance_template
     std::string getEEFrameName(std::string wp_name) { return wp_name + "/ee"; }
     
   private:
+
+    // store scalling factors
+    std::vector<double> scale;
     
     // menu config will hold the menu text as well as bool for whether it should have a checkbox
     typedef std::pair<std::string, bool> MenuConfig;
@@ -212,7 +217,8 @@ namespace affordance_template
     std::string current_trajectory_;
 
     std::map<std::string, double> object_scale_factor_;
-    std::map<std::string, double> object_scale_factor_y_;
+    std::map<std::string, int> object_scale_index_;
+//    std::map<std::string, double> object_scale_factor_y_;
     std::map<std::string, double> ee_scale_factor_;
 
     std::map<std::string, WaypointTrajectoryFlags> waypoint_flags_;

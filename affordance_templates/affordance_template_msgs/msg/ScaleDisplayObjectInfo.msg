@@ -12,8 +12,8 @@ string object_name
 # the scale factor
 float64 scale_factor
 
-# the scale factor y
-float64 scale_factor_y
+# the scale index
+uint8 scale_index
 
 # the end_effector adjustment scale factor
 float64 end_effector_scale_factor

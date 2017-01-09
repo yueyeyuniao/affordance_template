@@ -64,6 +64,8 @@ AffordanceTemplate::AffordanceTemplate(const ros::NodeHandle nh,
   // set to false when template gets destroyed, otherwise we can get a dangling pointer
   running_ = true;
   autoplay_display_ = true;
+  for(int i=0;i<5;i++)
+    scale.push_back(1.0);
 }
 
 
@@ -569,23 +571,13 @@ bool AffordanceTemplate::createDisplayObject(affordance_template_object::Display
     ee_scale_factor_[obj.name] = 1.0;
     ROS_DEBUG("AffordanceTemplate::createDisplayObject() -- setting scale factor for %s to default 1.0", obj.name.c_str());
   } 
-  if(object_scale_factor_y_.find(obj.name) == std::end(object_scale_factor_y_)) {
-    object_scale_factor_y_[obj.name] = 1.0;
-    ee_scale_factor_[obj.name] = 1.0;
-    ROS_DEBUG("AffordanceTemplate::createDisplayObject() -- setting scale factor_y for %s to default 1.0", obj.name.c_str());
-  } 
-
 
   if(object_scale_factor_.find(obj.parent) == std::end(object_scale_factor_)) {
     object_scale_factor_[obj.parent] = 1.0;
     ee_scale_factor_[obj.parent] = 1.0;
     ROS_DEBUG("AffordanceTemplate::createDisplayObject() -- setting parent scale factor for %s to default 1.0", obj.parent.c_str());
   }
-  if(object_scale_factor_y_.find(obj.parent) == std::end(object_scale_factor_y_)) {
-    object_scale_factor_y_[obj.parent] = 1.0;
-    ee_scale_factor_[obj.parent] = 1.0;
-    ROS_DEBUG("AffordanceTemplate::createDisplayObject() -- setting parent scale factor_y for %s to default 1.0", obj.parent.c_str());
-  }
+ 
   // get the object origin pose 
   geometry_msgs::PoseStamped display_pose;
   display_pose.header.frame_id = obj_frame;
@@ -596,11 +588,11 @@ bool AffordanceTemplate::createDisplayObject(affordance_template_object::Display
     display_pose.pose.orientation.x,display_pose.pose.orientation.y,display_pose.pose.orientation.z,display_pose.pose.orientation.w);
 
   // scale the object location according to parent object scale
-  if(object_scale_factor_[obj.parent] != 1.0 || object_scale_factor_y_[obj.parent] != 1.0) {
+  if(object_scale_factor_[obj.parent] != 1.0) {
 
     ROS_INFO("Scale the object location");
     display_pose.pose.position.x *= object_scale_factor_[obj.parent];
-    display_pose.pose.position.y *= object_scale_factor_y_[obj.parent];
+    display_pose.pose.position.y *= object_scale_factor_[obj.parent];
     display_pose.pose.position.z *= object_scale_factor_[obj.parent];
     ROS_DEBUG("AffordanceTemplate::createDisplayObject() -- scaled pose: (%.3f,%.3f,%.3f),(%.3f,%.3f,%.3f,%.3f)", 
       display_pose.pose.position.x,display_pose.pose.position.y,display_pose.pose.position.z,
@@ -667,44 +659,250 @@ bool AffordanceTemplate::createDisplayObjectMarker(affordance_template_object::D
   marker.text = obj.name;
   marker.ns = obj.name;
   ROS_DEBUG("AffordanceTemplate::createDisplayObjectMarker() -- obj=%s, scale_x=%.3f", obj.name.c_str(), object_scale_factor_[obj.name]);
-  ROS_INFO("AffordanceTemplate::createDisplayObjectMarker() -- obj=%s, scale_x=%.3f", obj.name.c_str(), object_scale_factor_[obj.name]);
-  ROS_INFO("AffordanceTemplate::createDisplayObjectMarker() -- obj=%s, scale_y=%.3f", obj.name.c_str(), object_scale_factor_y_[obj.name]);
-  
-  if(obj.shape.type == "mesh") {
-    marker.type = visualization_msgs::Marker::MESH_RESOURCE;
-    marker.mesh_resource = obj.shape.mesh;
-    marker.scale.x = obj.shape.size[0]*object_scale_factor_[obj.name];
-    marker.scale.y = obj.shape.size[1]*object_scale_factor_y_[obj.name];
-    marker.scale.z = obj.shape.size[2]*object_scale_factor_[obj.name];
-    ROS_DEBUG("AffordanceTemplate::createDisplayObjectMarker() -- drawing Mesh for object %s : %s (scale=%.3f)", obj.name.c_str(), marker.mesh_resource.c_str(), object_scale_factor_[obj.name]);
-  } else if(obj.shape.type == "box") {
-    marker.type = visualization_msgs::Marker::CUBE;
-    marker.scale.x = obj.shape.size[0]*object_scale_factor_[obj.name];
-    marker.scale.y = obj.shape.size[1]*object_scale_factor_y_[obj.name];
-    marker.scale.z = obj.shape.size[2]*object_scale_factor_[obj.name];
-  } else if(obj.shape.type == "sphere") {
-    marker.type = visualization_msgs::Marker::SPHERE;
-    marker.scale.x = obj.shape.size[0]*object_scale_factor_[obj.name];
-    marker.scale.y = obj.shape.size[1]*object_scale_factor_y_[obj.name];
-    marker.scale.z = obj.shape.size[2]*object_scale_factor_[obj.name];
-  } else if(obj.shape.type == "cylinder") {
-    marker.type = visualization_msgs::Marker::CYLINDER;
-    marker.scale.x = obj.shape.radius*object_scale_factor_[obj.name];
-    marker.scale.y = obj.shape.radius*object_scale_factor_[obj.name]; 
-    marker.scale.z = obj.shape.length*object_scale_factor_[obj.name];    
-  }
+//  ROS_INFO("AffordanceTemplate::createDisplayObjectMarker() -- obj=%s, scale_x=%.3f", obj.name.c_str(), object_scale_factor_[obj.name]);
+  //ROS_INFO("AffordanceTemplate::createDisplayObjectMarker() -- obj=%s, scale_y=%d", obj.name.c_str(), object_scale_index_[obj.name]);
+  ROS_INFO("obj=%s, scale_x=%.3f, scale_y=%.3f, scale_z=%.3f, scale_radius=%.3f, scale_length=%.3f", obj.name.c_str(), scale[0], scale[1], scale[2], scale[3], scale[4]);
 
-  if(obj.shape.type != "mesh") {
-    marker.color.r = obj.shape.rgba[0];
-    marker.color.g = obj.shape.rgba[1];
-    marker.color.b = obj.shape.rgba[2];
-    marker.color.a = obj.shape.rgba[3];
-  } else {
-    marker.mesh_use_embedded_materials = true;
-    marker.color.r = 1.0;
-    marker.color.g = 1.0;
-    marker.color.b = 1.0;
-    marker.color.a = 1.0;
+if(obj.shape.type == "mesh") {
+      marker.type = visualization_msgs::Marker::MESH_RESOURCE;
+      marker.mesh_resource = obj.shape.mesh;
+      marker.scale.x = obj.shape.size[0]*scale[0];
+      marker.scale.y = obj.shape.size[1]*scale[1];
+      marker.scale.z = obj.shape.size[2]*scale[2];
+      ROS_DEBUG("AffordanceTemplate::createDisplayObjectMarker() -- drawing Mesh for object %s : %s (scale=%.3f)", obj.name.c_str(), marker.mesh_resource.c_str(), object_scale_factor_[obj.name]);
+    } else if(obj.shape.type == "box") {
+      marker.type = visualization_msgs::Marker::CUBE;
+      marker.scale.x = obj.shape.size[0]*scale[0];
+      marker.scale.y = obj.shape.size[1]*scale[1];
+      marker.scale.z = obj.shape.size[2]*scale[2];
+    } else if(obj.shape.type == "sphere") {
+      marker.type = visualization_msgs::Marker::SPHERE;
+      marker.scale.x = obj.shape.size[0]*scale[0];
+      marker.scale.y = obj.shape.size[1]*scale[1];
+      marker.scale.z = obj.shape.size[2]*scale[2];
+    } else if(obj.shape.type == "cylinder") {
+      marker.type = visualization_msgs::Marker::CYLINDER;
+      marker.scale.x = obj.shape.radius*scale[3];
+      marker.scale.y = obj.shape.radius*scale[3];
+      marker.scale.z = obj.shape.length*scale[4];    
+    }
+
+    if(obj.shape.type != "mesh") {
+      marker.color.r = obj.shape.rgba[0];
+      marker.color.g = obj.shape.rgba[1];
+      marker.color.b = obj.shape.rgba[2];
+      marker.color.a = obj.shape.rgba[3];
+    } else {
+      marker.mesh_use_embedded_materials = true;
+      marker.color.r = 1.0;
+      marker.color.g = 1.0;
+      marker.color.b = 1.0;
+      marker.color.a = 1.0;
+    }
+
+  
+  // scalling depends on different indexes
+  switch (object_scale_index_[obj.name]) {
+    case 1:   
+              scale[0] = object_scale_factor_[obj.name];
+              if(obj.shape.type == "mesh") {
+              marker.type = visualization_msgs::Marker::MESH_RESOURCE;
+              marker.mesh_resource = obj.shape.mesh;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+              ROS_DEBUG("AffordanceTemplate::createDisplayObjectMarker() -- drawing Mesh for object %s : %s (scale=%.3f)", obj.name.c_str(), marker.mesh_resource.c_str(), object_scale_factor_[obj.name]);
+            } else if(obj.shape.type == "box") {
+              marker.type = visualization_msgs::Marker::CUBE;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+            } else if(obj.shape.type == "sphere") {
+              marker.type = visualization_msgs::Marker::SPHERE;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+            } else if(obj.shape.type == "cylinder") {
+              marker.type = visualization_msgs::Marker::CYLINDER;
+              marker.scale.x = obj.shape.radius*scale[3];
+              marker.scale.y = obj.shape.radius*scale[3];
+              marker.scale.z = obj.shape.length*scale[4];    
+            }
+
+            if(obj.shape.type != "mesh") {
+              marker.color.r = obj.shape.rgba[0];
+              marker.color.g = obj.shape.rgba[1];
+              marker.color.b = obj.shape.rgba[2];
+              marker.color.a = obj.shape.rgba[3];
+            } else {
+              marker.mesh_use_embedded_materials = true;
+              marker.color.r = 1.0;
+              marker.color.g = 1.0;
+              marker.color.b = 1.0;
+              marker.color.a = 1.0;
+            }
+
+            break;
+    case 2: 
+              scale[1] = object_scale_factor_[obj.name];
+              if(obj.shape.type == "mesh") {
+              marker.type = visualization_msgs::Marker::MESH_RESOURCE;
+              marker.mesh_resource = obj.shape.mesh;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+              ROS_DEBUG("AffordanceTemplate::createDisplayObjectMarker() -- drawing Mesh for object %s : %s (scale=%.3f)", obj.name.c_str(), marker.mesh_resource.c_str(), object_scale_factor_[obj.name]);
+            } else if(obj.shape.type == "box") {
+              marker.type = visualization_msgs::Marker::CUBE;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+            } else if(obj.shape.type == "sphere") {
+              marker.type = visualization_msgs::Marker::SPHERE;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+            } else if(obj.shape.type == "cylinder") {
+              marker.type = visualization_msgs::Marker::CYLINDER;
+              marker.scale.x = obj.shape.radius*scale[3];
+              marker.scale.y = obj.shape.radius*scale[3];
+              marker.scale.z = obj.shape.length*scale[4];    
+            }
+
+            if(obj.shape.type != "mesh") {
+              marker.color.r = obj.shape.rgba[0];
+              marker.color.g = obj.shape.rgba[1];
+              marker.color.b = obj.shape.rgba[2];
+              marker.color.a = obj.shape.rgba[3];
+            } else {
+              marker.mesh_use_embedded_materials = true;
+              marker.color.r = 1.0;
+              marker.color.g = 1.0;
+              marker.color.b = 1.0;
+              marker.color.a = 1.0;
+            }
+
+            break;
+    case 3: 
+              scale[2] = object_scale_factor_[obj.name];
+              if(obj.shape.type == "mesh") {
+              marker.type = visualization_msgs::Marker::MESH_RESOURCE;
+              marker.mesh_resource = obj.shape.mesh;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+              ROS_DEBUG("AffordanceTemplate::createDisplayObjectMarker() -- drawing Mesh for object %s : %s (scale=%.3f)", obj.name.c_str(), marker.mesh_resource.c_str(), object_scale_factor_[obj.name]);
+            } else if(obj.shape.type == "box") {
+              marker.type = visualization_msgs::Marker::CUBE;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+            } else if(obj.shape.type == "sphere") {
+              marker.type = visualization_msgs::Marker::SPHERE;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+            } else if(obj.shape.type == "cylinder") {
+              marker.type = visualization_msgs::Marker::CYLINDER;
+              marker.scale.x = obj.shape.radius*scale[3];
+              marker.scale.y = obj.shape.radius*scale[3];
+              marker.scale.z = obj.shape.length*scale[4];    
+            }
+
+            if(obj.shape.type != "mesh") {
+              marker.color.r = obj.shape.rgba[0];
+              marker.color.g = obj.shape.rgba[1];
+              marker.color.b = obj.shape.rgba[2];
+              marker.color.a = obj.shape.rgba[3];
+            } else {
+              marker.mesh_use_embedded_materials = true;
+              marker.color.r = 1.0;
+              marker.color.g = 1.0;
+              marker.color.b = 1.0;
+              marker.color.a = 1.0;
+            }
+
+            break;
+    case 4: 
+              scale[3] = object_scale_factor_[obj.name];
+              if(obj.shape.type == "mesh") {
+              marker.type = visualization_msgs::Marker::MESH_RESOURCE;
+              marker.mesh_resource = obj.shape.mesh;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+              ROS_DEBUG("AffordanceTemplate::createDisplayObjectMarker() -- drawing Mesh for object %s : %s (scale=%.3f)", obj.name.c_str(), marker.mesh_resource.c_str(), object_scale_factor_[obj.name]);
+            } else if(obj.shape.type == "box") {
+              marker.type = visualization_msgs::Marker::CUBE;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+            } else if(obj.shape.type == "sphere") {
+              marker.type = visualization_msgs::Marker::SPHERE;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+            } else if(obj.shape.type == "cylinder") {
+              marker.type = visualization_msgs::Marker::CYLINDER;
+              marker.scale.x = obj.shape.radius*scale[3];
+              marker.scale.y = obj.shape.radius*scale[3];
+              marker.scale.z = obj.shape.length*scale[4];    
+            }
+
+            if(obj.shape.type != "mesh") {
+              marker.color.r = obj.shape.rgba[0];
+              marker.color.g = obj.shape.rgba[1];
+              marker.color.b = obj.shape.rgba[2];
+              marker.color.a = obj.shape.rgba[3];
+            } else {
+              marker.mesh_use_embedded_materials = true;
+              marker.color.r = 1.0;
+              marker.color.g = 1.0;
+              marker.color.b = 1.0;
+              marker.color.a = 1.0;
+            }
+
+            break;
+    case 5: 
+              scale[4] = object_scale_factor_[obj.name];
+              if(obj.shape.type == "mesh") {
+              marker.type = visualization_msgs::Marker::MESH_RESOURCE;
+              marker.mesh_resource = obj.shape.mesh;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+              ROS_DEBUG("AffordanceTemplate::createDisplayObjectMarker() -- drawing Mesh for object %s : %s (scale=%.3f)", obj.name.c_str(), marker.mesh_resource.c_str(), object_scale_factor_[obj.name]);
+            } else if(obj.shape.type == "box") {
+              marker.type = visualization_msgs::Marker::CUBE;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+            } else if(obj.shape.type == "sphere") {
+              marker.type = visualization_msgs::Marker::SPHERE;
+              marker.scale.x = obj.shape.size[0]*scale[0];
+              marker.scale.y = obj.shape.size[1]*scale[1];
+              marker.scale.z = obj.shape.size[2]*scale[2];
+            } else if(obj.shape.type == "cylinder") {
+              marker.type = visualization_msgs::Marker::CYLINDER;
+              marker.scale.x = obj.shape.radius*scale[3];
+              marker.scale.y = obj.shape.radius*scale[3];
+              marker.scale.z = obj.shape.length*scale[4];    
+            }
+
+            if(obj.shape.type != "mesh") {
+              marker.color.r = obj.shape.rgba[0];
+              marker.color.g = obj.shape.rgba[1];
+              marker.color.b = obj.shape.rgba[2];
+              marker.color.a = obj.shape.rgba[3];
+            } else {
+              marker.mesh_use_embedded_materials = true;
+              marker.color.r = 1.0;
+              marker.color.g = 1.0;
+              marker.color.b = 1.0;
+              marker.color.a = 1.0;
+            }
+
+            break;    
   }
 
   return true;
@@ -2692,11 +2890,11 @@ void AffordanceTemplate::stop()
   removeAllMarkers();
 }
 
-bool AffordanceTemplate::setObjectScaling(const std::string& key, double scale_factor, double scale_factor_y, double ee_scale_factor)
+bool AffordanceTemplate::setObjectScaling(const std::string& key, double scale_factor, int scale_index, double ee_scale_factor)
 { 
   ROS_DEBUG("[AffordanceTemplate::setObjectScaling] setting object %s scaling to %g, %g", key.c_str(), scale_factor, ee_scale_factor);
   object_scale_factor_[key] = scale_factor;
-  object_scale_factor_y_[key] = scale_factor_y;
+  object_scale_index_[key] = scale_index;
   ee_scale_factor_[key] = ee_scale_factor;
   removeInteractiveMarker(key);
   return buildTemplate();
