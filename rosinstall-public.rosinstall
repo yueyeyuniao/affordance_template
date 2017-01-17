@@ -1,0 +1,31 @@
+# IT IS UNLIKELY YOU WANT TO EDIT THIS FILE BY HAND,
+# UNLESS FOR REMOVING ENTRIES.
+# IF YOU WANT TO CHANGE THE ROS ENVIRONMENT VARIABLES
+# USE THE rosinstall TOOL INSTEAD.
+# IF YOU CHANGE IT, USE rosinstall FOR THE CHANGES TO TAKE EFFECT
+- setup-file: {local-name: /opt/ros/indigo/setup.sh}
+- git:
+    local-name: src/trac_ik
+    uri: git@bitbucket.org:traclabs/trac_ik.git
+    version: master
+- git:
+    local-name: src/nasa_r2_simulator
+    uri: git@bitbucket.org:traclabs/nasa_r2_simulator.git
+    version: traclabs-devel
+- git:
+    local-name: src/nasa_r2_common
+    uri: git@bitbucket.org:traclabs/nasa_r2_common.git
+    version: traclabs-tracik
+- git:
+    local-name: src/affordance_templates
+    uri: git@bitbucket.org:traclabs/affordance_templates.git
+    version: public
+- git:
+    local-name: src/robot_interaction_tools
+    uri: git@bitbucket.org:traclabs/robot_interaction_tools.git
+    version: public
+- git:
+    local-name: src/trac_gazebo_tools
+    uri: git@bitbucket.org:traclabs/trac_gazebo_tools.git
+    version: solar-panel
+
