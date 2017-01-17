@@ -237,7 +237,7 @@ namespace rviz_affordance_template_panel
         ros::ServiceClient set_waypoint_view_client_;
 
         // affordance template publishers
-        ros::Publisher scale_object_streamer_;
+        ros::Publisher scale_object_streamer_; 
 
         // control helper class
         ControlsSharedPtr controls_;

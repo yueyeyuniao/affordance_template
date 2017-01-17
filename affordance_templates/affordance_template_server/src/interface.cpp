@@ -64,6 +64,7 @@ AffordanceTemplateInterface::AffordanceTemplateInterface(const ros::NodeHandle &
   at_srv_map_["set_waypoint_view"]       = nh_.advertiseService(base_srv + "set_waypoint_view", &AffordanceTemplateInterface::handleSetWaypointViews, this);
 
   scale_stream_sub_ = nh_.subscribe(base_srv + "scale_object_streamer", 1000, &AffordanceTemplateInterface::handleObjectScaleCallback, this);
+  send_object_list_ = nh_.advertise<affordance_template_msgs::ObjectInfo>("/affordance_template_server/send_object_list", 10);
 
   plan_thread_.reset(new boost::thread(boost::bind(&AffordanceTemplateInterface::runPlanAction, this)));
   exe_thread_.reset(new boost::thread(boost::bind(&AffordanceTemplateInterface::runExecuteAction, this)));
@@ -626,6 +627,22 @@ AffordanceTemplateStatus AffordanceTemplateInterface::getTemplateStatus(const st
       oi.size.z = obj.shape.size[2];
     }
     ats.object_info.push_back(oi);
+
+    affordance_template_msgs::ObjectInfo msg;
+    msg.object_name = oi.object_name;
+    msg.object_pose = oi.object_pose;
+    msg.type = oi.type;
+    msg.mesh_resource = oi.mesh_resource;
+    msg.size.x = oi.size.x;
+    msg.size.y = oi.size.y;
+    msg.size.z = oi.size.z;
+
+   
+    //ROS_INFO("[handleObjectScaleCallback] scale_index=%d", msg.scale_index);
+    //ROS_DEBUG("sending scale to template[%s:%d].%s  with scales(%2.2f,%2.2f) " , current_template_class.c_str(), current_template_id, current_scale_object.c_str(), obj_scale_value, ee_adj_value);
+    streamObjectInfo(msg);
+
+
   }
 
   std::map<std::string, int> ee_names = at->getRobotInterface()->getEEIDMap();
@@ -699,4 +716,9 @@ bool AffordanceTemplateInterface::doesEndEffectorExist(const ATPointer& atp, con
   }
 
   return found;
+}
+
+
+void AffordanceTemplateInterface::streamObjectInfo(affordance_template_msgs::ObjectInfo object_info) {  
+   send_object_list_.publish(object_info);
 }

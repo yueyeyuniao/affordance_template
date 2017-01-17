@@ -78,7 +78,7 @@ AffordanceTemplateRVizClient::AffordanceTemplateRVizClient(ros::NodeHandle &nh, 
 
   // setup publishers
   scale_object_streamer_ = nh_.advertise<affordance_template_msgs::ScaleDisplayObjectInfo>("/affordance_template_server/scale_object_streamer", 10);
-
+  
   // set up controls helper class
   controls_->setUI(ui_);
   controls_->setServices(plan_command_client_, execute_command_client_);

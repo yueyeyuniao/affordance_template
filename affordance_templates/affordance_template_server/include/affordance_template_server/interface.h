@@ -91,12 +91,15 @@ namespace affordance_template_server
 
         void runPlanAction();
         void runExecuteAction();
+
         void handleObjectScaleCallback(const ScaleDisplayObjectInfo&);
         bool doesTrajectoryExist(const ATPointer&, const std::string&);
         bool doesEndEffectorExist(const ATPointer&, const std::string&);
+        void streamObjectInfo(affordance_template_msgs::ObjectInfo);
         AffordanceTemplateStatus getTemplateStatus(const std::string& template_name, const int template_id, std::string& traj_name, const std::string& frame_id="");
         
         ros::Subscriber scale_stream_sub_;
+        ros::Publisher send_object_list_;
         boost::shared_ptr<AffordanceTemplateServer> at_server_;
         tf::TransformListener listener_;
         std::map<std::string, ros::ServiceServer> at_srv_map_;
