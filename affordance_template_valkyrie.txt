@@ -1,0 +1,10 @@
+source /opt/nasa/indigo/setup.bash
+roslaunch srcsim qual2.launch init:=true walk_test:=true
+
+
+source ~/TemplateDev/devel/setup.bash --extend
+rviz
+
+
+rosrun valkyrie_tests armDemo1.py 1 0 0 0 0 0 0 0
+rosrun valkyrie_tests handcontrol.py 1 1
