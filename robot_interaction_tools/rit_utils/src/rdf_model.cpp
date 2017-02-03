@@ -56,7 +56,7 @@ bool RDFModel::init(const std::string& srdf, const std::string& urdf)
 }
 
 bool RDFModel::createModels(const std::string& srdf, const std::string& urdf)
-{
+{ /*
   ros::NodeHandle nh;
   ROS_INFO("[RDFModel::createModels] Creating Robot Model from URDF from %s....", urdf.c_str());
   ROS_ASSERT(nh.hasParam(urdf));
@@ -79,6 +79,7 @@ bool RDFModel::createModels(const std::string& srdf, const std::string& urdf)
     ROS_FATAL("[RDFModel::init] Failed to parse SRDF!");
     return false;
   }
+*/
   return true;
 }
 
